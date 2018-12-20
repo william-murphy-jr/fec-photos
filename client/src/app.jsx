@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// import Board from './components/Board.jsx';
+import Gallery from './components/Gallery.jsx';
 
-ReactDOM.render("Hello from React", document.getElementById("app"));
+ReactDOM.render(<Gallery />, document.getElementById("app"));
 
 
 
