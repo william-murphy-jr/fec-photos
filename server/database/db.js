@@ -74,9 +74,11 @@ const Bathroom = sequelize.define('bathroom', {
 
 // "force": true will recreate the table EVERYTIME the
 // database is called
+
+const log = console.log('seedDb just seeded the database gallery with records!!!');
 sequelize.sync({"force": true})
   .then(function() {
-    seeDb.seedDb();
+    seeDb.seedDb(null, log);
     console.log('sequelize.sync() it Baby!!!');
   });
 

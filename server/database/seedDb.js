@@ -1,30 +1,36 @@
 var db = require('./db');
+var faker = require('faker');
 
 
-const seedDb = function(numberOfRecords) {
+const seedDb = function(numberOfRecords, callback) {
   numberOfRecords = numberOfRecords ? numberOfRecords : 100;
-  console.log('seedDb ran!!!');
+  
+  for (let i = 0; i < numberOfRecords; i++) {
 
-  db.Exterior.create({
-    fileName: 'Imagefile.png',
-    imageName: 'The Last Supper Maybe Extra! extra!?'
-  });
+    db.Exterior.create({
+      fileName: faker.image.imageUrl(800, 225),
+      imageName: faker.image.imageUrl(800, 225)
+    });
+    
+    db.Interior.create({
+      fileName: faker.image.imageUrl(800, 225),
+      imageName: faker.image.imageUrl(800, 225)
+    });
+    
+    db.Bedroom.create({
+      fileName: faker.image.imageUrl(800, 225),
+      imageName: faker.image.imageUrl(800, 225)
+    });
+    
+    db.Bathroom.create({
+      fileName: faker.image.imageUrl(800, 225),
+      imageName: faker.image.imageUrl(800, 225)
+    });
+  }
 
-  db.Interior.create({
-    fileName: 'InteriorImagefile.png',
-    imageName: 'The Last Interior Supper Maybe Extra! extra!!?'
-  });
-
-  db.Bedroom.create({
-    fileName: 'BedroomImagefile.png',
-    imageName: 'The Last Bedroom Supper Maybe Extra! extra!?'
-  });
-
-  db.Bathroom.create({
-    fileName: 'BathroomImagefile.png',
-    imageName: 'The Last Bathroom Supper Maybe Extra! extra!!?'
-  });
-
+  callback();
+  
+  // console.log('seedDb just seeded the database gallery with ' + numberOfRecords + ' records!!!');
 };
 
 exports.seedDb = seedDb;
