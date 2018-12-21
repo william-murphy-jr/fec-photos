@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const seeDb = require('./seedDb');
 
 const sequelize = new Sequelize('gallery', 'student', 'student', {
   // host: 'localhost',
@@ -71,27 +72,37 @@ const Bathroom = sequelize.define('bathroom', {
   }
 });
 
-sequelize.sync({"force": true});
+// "force": true will recreate the table EVERYTIME the
+// database is called
+sequelize.sync({"force": true})
+  .then(function() {
+    seeDb.seedDb();
+    console.log('sequelize.sync() it Baby!!!');
+  });
 
-// Exterior.create({ fileName: 'Imagefile.png', imageName: 'The Last Supper' });
+// Exterior
+//   .sync()
+//   .then(function () {
+//   // Now instantiate an object and save it:
+//     // return Exterior.create({
+//       // fileName: 'Imagefile.png',
+//       // imageName: 'The Last Supper'
+//     // });
+//   }
+//   );
 
+// Interior.sync();
+// Bathroom.sync();
+// Bedroom.sync();
 
-
-
-/*
-    In this example, findOrCreate returns an array like this:
-    [ {
-        username: 'fnord',
-        job: 'omnomnom',
-        id: 2,
-        createdAt: Fri Mar 22 2013 21: 28: 34 GMT + 0100(CET),
-        updatedAt: Fri Mar 22 2013 21: 28: 34 GMT + 0100(CET)
-      },
-      false
-    ]
-    The array returned by findOrCreate gets spread into its 2 parts by the "spread" on line 69, and the parts will be passed as 2 arguments to the callback function beginning on line 69, which will then treat them as "user" and "created" in this case. (So "user" will be the object from index 0 of the returned array and "created" will equal "false".)
-    */
+// Exterior.create({ 
+//   fileName: 'Imagefile.png', 
+//   imageName: 'The Last Supper'
+// }).then(function() {
+//   console.log("Exterior Run!!!");
 // })
+
+
 exports.Exterior = Exterior;
 exports.Interior = Interior;
 exports.Bedroom = Bedroom;
