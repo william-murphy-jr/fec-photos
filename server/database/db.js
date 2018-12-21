@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const seeDb = require('./seedDb');
+const seedDb = require('../database/seedDb');
 
 const sequelize = new Sequelize('gallery', 'student', 'student', {
   // host: 'localhost',
@@ -11,8 +11,7 @@ const sequelize = new Sequelize('gallery', 'student', 'student', {
     min: 0,
     acquire: 30000,
     idle: 10000
-  },
-
+  }
 });
 
 const Interior = sequelize.define('interior', {
@@ -57,7 +56,6 @@ const Bedroom = sequelize.define('bedroom', {
   }
 });
 
-
 const Bathroom = sequelize.define('bathroom', {
   id: {
     type: Sequelize.INTEGER,
@@ -72,42 +70,17 @@ const Bathroom = sequelize.define('bathroom', {
   }
 });
 
-// "force": true will recreate the table EVERYTIME the
-// database is called
-
 const log = console.log('seedDb just seeded the database gallery with records!!!');
+
+// { "force": true } will recreate the table 
+// EVERY TIME the database is called.
 sequelize.sync({"force": true})
   .then(function() {
-    seeDb.seedDb(null, log);
+    seedDb.seedDb(null, log);
     console.log('sequelize.sync() it Baby!!!');
   });
 
-// Exterior
-//   .sync()
-//   .then(function () {
-//   // Now instantiate an object and save it:
-//     // return Exterior.create({
-//       // fileName: 'Imagefile.png',
-//       // imageName: 'The Last Supper'
-//     // });
-//   }
-//   );
-
-// Interior.sync();
-// Bathroom.sync();
-// Bedroom.sync();
-
-// Exterior.create({ 
-//   fileName: 'Imagefile.png', 
-//   imageName: 'The Last Supper'
-// }).then(function() {
-//   console.log("Exterior Run!!!");
-// })
-
-
 exports.Exterior = Exterior;
 exports.Interior = Interior;
-exports.Bedroom = Bedroom;
+exports.Bedroom  = Bedroom;
 exports.Bathroom = Bathroom;
-
-// exports.Sequelize = Sequelize;

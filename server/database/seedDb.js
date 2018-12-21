@@ -1,7 +1,6 @@
 var db = require('./db');
 var faker = require('faker');
 
-
 const seedDb = function(numberOfRecords, callback) {
   numberOfRecords = numberOfRecords ? numberOfRecords : 100;
   
@@ -28,9 +27,9 @@ const seedDb = function(numberOfRecords, callback) {
     });
   }
 
+  // Just in case we want to do something not asyc
+  // For aync for loop use npm's forloop
   callback();
-  
-  // console.log('seedDb just seeded the database gallery with ' + numberOfRecords + ' records!!!');
 };
 
 exports.seedDb = seedDb;
