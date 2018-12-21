@@ -14,15 +14,6 @@ const sequelize = new Sequelize('gallery', 'student', 'student', {
 
 });
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
-
 const Interior = sequelize.define('interior', {
   id: {
     type: Sequelize.INTEGER,
@@ -80,8 +71,11 @@ const Bathroom = sequelize.define('bathroom', {
   }
 });
 
+sequelize.sync({"force": true});
 
 // Exterior.create({ fileName: 'Imagefile.png', imageName: 'The Last Supper' });
+
+
 
 
 /*
@@ -97,7 +91,7 @@ const Bathroom = sequelize.define('bathroom', {
     ]
     The array returned by findOrCreate gets spread into its 2 parts by the "spread" on line 69, and the parts will be passed as 2 arguments to the callback function beginning on line 69, which will then treat them as "user" and "created" in this case. (So "user" will be the object from index 0 of the returned array and "created" will equal "false".)
     */
-  // })
+// })
 exports.Exterior = Exterior;
 exports.Interior = Interior;
 exports.Bedroom = Bedroom;
