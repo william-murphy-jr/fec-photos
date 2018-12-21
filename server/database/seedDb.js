@@ -3,27 +3,29 @@ var faker = require('faker');
 
 const seedDb = function(numberOfRecords, callback) {
   numberOfRecords = numberOfRecords ? numberOfRecords : 100;
+  let width = 1600;
+  let height = 400;
   
   for (let i = 0; i < numberOfRecords; i++) {
 
     db.Exterior.create({
-      fileName: faker.image.imageUrl(800, 225),
-      imageName: faker.image.imageUrl(800, 225)
+      fileName: faker.image.imageUrl(width, height),
+      imageName: faker.image.imageUrl(width, height)
     });
     
     db.Interior.create({
-      fileName: faker.image.imageUrl(800, 225),
-      imageName: faker.image.imageUrl(800, 225)
+      fileName: faker.image.imageUrl(width, height),
+      imageName: faker.image.imageUrl(width, height)
     });
     
     db.Bedroom.create({
-      fileName: faker.image.imageUrl(800, 225),
-      imageName: faker.image.imageUrl(800, 225)
+      fileName: faker.image.imageUrl(width, height),
+      imageName: faker.image.imageUrl(width, height)
     });
     
     db.Bathroom.create({
-      fileName: faker.image.imageUrl(800, 225),
-      imageName: faker.image.imageUrl(800, 225)
+      fileName: faker.image.imageUrl(width, height),
+      imageName: faker.image.imageUrl(width, height)
     });
   }
 

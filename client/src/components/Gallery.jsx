@@ -6,13 +6,16 @@ class Gallery extends React.Component {
 
   }
 
-  render() {
-
-    return (
-      <div>
-        <h1>React IS Running</h1>
+  render() { 
+    return  (
+      <div className="container-fluid" style={{marginLeft: "-15px"}}>
+        <div className="row">
+          <div className="col-6"><img src="http://lorempixel.com/800/225" /></div>
+          <div className="col-6"><img src="http://lorempixel.com/800/225" /></div>
+        </div>
       </div>
     );
+
   }
 }
 export default Gallery;
