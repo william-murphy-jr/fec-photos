@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const db = require('./database/db');
+// const db = require('./database/db');
 const getGalleryImages = require('../server/controller/gallery');
 
 const app = express();
@@ -8,7 +8,7 @@ const app = express();
 app.set('PORT', 3000);
 app.use(morgan('dev'));
 
-app.use('/', express.static(__dirname + './../public'))
+app.use('/', express.static(__dirname + './../public'));
 
 app.get('/gallery', getGalleryImages.getGalleryImages);
 
