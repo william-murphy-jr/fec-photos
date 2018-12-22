@@ -6,30 +6,20 @@ const seedDb = function(numberOfRecords, callback) {
   let width = 1600;
   let height = 400;
   
-  console.log('*************************** fileName: faker.image.imageUrl(width, height),',
-    faker.image.food(width, height));
+  // console.log('*************************** fileName: faker.image.imageUrl(width, height),',
+  //   faker.image.food(width, height));
   
   for (let i = 0; i < numberOfRecords; i++) {
 
-    db.Exterior.create({
+    // 1 out of 10 will be a primary photo Maybe?
+    let primary = Math.random() < 0.11 ? true : false;
+
+    db.DISPLAY_IMAGE.create({
       fileName: faker.image.imageUrl(width, height),
-      imageName: faker.image.imageUrl(width, height)
+      imageName: faker.image.imageUrl(width, height),
+      primaryImage: primary
     });
     
-    db.Interior.create({
-      fileName: faker.image.imageUrl(width, height),
-      imageName: faker.image.imageUrl(width, height)
-    });
-    
-    db.Bedroom.create({
-      fileName: faker.image.imageUrl(width, height),
-      imageName: faker.image.imageUrl(width, height)
-    });
-    
-    db.Bathroom.create({
-      fileName: faker.image.imageUrl(width, height),
-      imageName: faker.image.imageUrl(width, height)
-    });
   }
 
   // Just in case we want to do something not asyc

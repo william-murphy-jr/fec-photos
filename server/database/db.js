@@ -14,60 +14,16 @@ const sequelize = new Sequelize('gallery', 'student', 'student', {
   }
 });
 
-const Interior = sequelize.define('interior', {
+const DISPLAY_IMAGE = sequelize.define('display_image', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  fileName: {
-    type: Sequelize.STRING
-  },
-  imageName: {
-    type: Sequelize.STRING
-  }
-});
+  fileName: Sequelize.STRING,
+  imageName: Sequelize.STRING,
+  primaryImage: Sequelize.BOOLEAN
 
-const Exterior = sequelize.define('exterior', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  fileName: {
-    type: Sequelize.STRING
-  },
-  imageName: {
-    type: Sequelize.STRING
-  }
-});
-
-const Bedroom = sequelize.define('bedroom', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  fileName: {
-    type: Sequelize.STRING
-  },
-  imageName: {
-    type: Sequelize.STRING
-  }
-});
-
-const Bathroom = sequelize.define('bathroom', {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  fileName: {
-    type: Sequelize.STRING
-  },
-  imageName: {
-    type: Sequelize.STRING
-  }
 });
 
 const log = console.log('seedDb just seeded the database gallery with records!!!');
@@ -80,7 +36,5 @@ sequelize.sync({"force": true})
     console.log('sequelize.sync() it Baby!!!');
   });
 
-exports.Exterior = Exterior;
-exports.Interior = Interior;
-exports.Bedroom  = Bedroom;
-exports.Bathroom = Bathroom;
+
+exports.DISPLAY_IMAGE = DISPLAY_IMAGE;

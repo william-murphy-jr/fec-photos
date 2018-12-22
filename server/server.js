@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const db = require('./database/db');
+const getGalleryImages = require('../server/controller/gallery');
 
 const app = express();
 
@@ -9,9 +10,7 @@ app.use(morgan('dev'));
 
 app.use('/', express.static(__dirname + './../public'))
 
-app.get('/', function (req, res) {
-  res.sendStatus(200);
-});
+app.get('/gallery', getGalleryImages.getGalleryImages);
 
 app.listen(app.get('PORT'), function () {
   console.log(`server is off and running on port ${app.get('PORT')}`);
