@@ -6,6 +6,9 @@ const seedDb = function(numberOfRecords, callback) {
   let width = 1600;
   let height = 400;
   
+  console.log('*************************** fileName: faker.image.imageUrl(width, height),',
+    faker.image.food(width, height));
+  
   for (let i = 0; i < numberOfRecords; i++) {
 
     db.Exterior.create({
@@ -31,7 +34,7 @@ const seedDb = function(numberOfRecords, callback) {
 
   // Just in case we want to do something not asyc
   // For aync for loop use npm's forloop
-  callback();
+  // callback();
 };
 
 exports.seedDb = seedDb;
