@@ -1,3 +1,13 @@
 * {
-  outline: 1px solid red;
+  outline: 4px solid darkgrey;
+}
+
+.quarter {
+  padding: 0 !important;
+}
+
+
+.half {
+  padding-left: 0 !important;
+  padding-right: 0 !important
 }

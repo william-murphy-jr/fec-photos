@@ -7,23 +7,25 @@ class Gallery extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid" style={{ marginLeft: "-15px" }}>
+      <div className="container-fluid" style={{ marginLeft: "0px" }}>
         <div className="row">
-          <div className="col-6">
+          <div className="col-6 half">
             <img class="img-fluid" src="http://lorempixel.com/800/225" />
           </div>
           <div className="col-6">
             <div className="row">
-              <div className="col-6">
+              <div className="col-6 quarter">
                 <img class="img-fluid" src="http://lorempixel.com/800/225" />
               </div>
-              <div className="col-6">
+              <div className="col-6 quarter">
                 <img class="img-fluid" src="http://lorempixel.com/800/225" />
               </div>
-              <div className="col-6">
+            </div>
+            <div className="row">
+              <div className="col-6 quarter">
                 <img class="img-fluid" src="http://lorempixel.com/800/225" />
               </div>
-              <div className="col-6">
+              <div className="col-6 quarter">
                 <img class="img-fluid" src="http://lorempixel.com/800/225" />
               </div>
             </div>
