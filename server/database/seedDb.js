@@ -3,8 +3,8 @@ var faker = require('faker');
 
 const seedDb = function(numberOfRecords, callback) {
   numberOfRecords = numberOfRecords ? numberOfRecords : 100;
-  let width = 1600;
-  let height = 400;
+  let width = 1200;
+  let height = 650;
   
   // console.log('*************************** fileName: faker.image.imageUrl(width, height),',
   //   faker.image.food(width, height));

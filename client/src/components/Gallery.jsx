@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import GalleryHalf from './GalleryHalf.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -19,9 +20,8 @@ class Gallery extends React.Component {
       console.log("data[0].fileName: ", data[0].fileName);
       // alert('Returned Data Saved: ' + data);
       self.setState({ images: data });
-      console.log("self.state.images: ", self.state.images);
-      console.log("self.state.images[0].fileName: ", self.state.images[0].fileName
-      );
+      let theImage = self.state.images[0].fileName.trim() + '/city';
+      // console.log('with trim url +  \' /city\' = theImage:  ' , theImage);
     });
   }
 
@@ -29,41 +29,43 @@ class Gallery extends React.Component {
   render() {
 
     if (this.state.images.length) {
+      
+      let image0 = this.state.images[0].fileName.trim() + '/city';
+      let image1 = this.state.images[0].fileName.trim() + '/fashion';
+      let image2 = this.state.images[0].fileName.trim() + '/food';
+      let image3 = this.state.images[0].fileName.trim() + '/transport';
+      let image4 = this.state.images[0].fileName.trim() + '/nightlife';
+
       return (
         <div className="container-fluid" style={{ marginLeft: '0px' }}>
           <div className="row">
-            <div className="col-6 half">
-              <img
-                class="img-fluid"
-                src={this.state.images[0].fileName + '/city'} 
-              />
-            </div>
+            <GalleryHalf image0={image0} />
             <div className="col-6">
               <div className="row">
                 <div className="col-6 quarter">
                   <img
-                    class="img-fluid"
-                    src={this.state.images[1].fileName + '/fashion'}
+                    className="img-fluid"
+                    src={ image1}
                   />
                 </div>
-                <div className="col-6 quarter">
+                <div className="col-6 py-5 quarter">
                   <img
-                    class="img-fluid"
-                    src={this.state.images[2].fileName + '/food'}
+                    className="img-fluid"
+                    src={ image2 }
                   />
                 </div>
               </div>
               <div className="row">
-                <div className="col-6 quarter">
+                <div className="col-6 px-5 quarter">
                   <img
-                    class="img-fluid"
-                    src={this.state.images[3].fileName + '/transportation'}
+                    className="img-fluid"
+                    src={ image3}
                   />
                 </div>
-                <div className="col-6 quarter">
+                <div className="col-6 px-5 quarter">
                   <img
-                    class="img-fluid"
-                    src={this.state.images[4].fileName + '/nightlife'}
+                    className="img-fluid"
+                    src={ image4 }
                   />
                 </div>
               </div>
@@ -77,36 +79,36 @@ class Gallery extends React.Component {
           <div className="row">
             <div className="col-6 half">
               <img
-                class="img-fluid"
-                src="http://lorempixel.com/800/225/transport"
+                className="img-fluid"
+                src="http://lorempixel.com/1200/650/transport"
               />
             </div>
             <div className="col-6">
               <div className="row">
                 <div className="col-6 quarter">
                   <img
-                    class="img-fluid"
-                    src="http://lorempixel.com/800/225/transport"
+                    className="img-fluid"
+                    src="http://lorempixel.com/1200/650/transport"
                   />
                 </div>
                 <div className="col-6 quarter">
                   <img
-                    class="img-fluid"
-                    src="http://lorempixel.com/800/225/city"
+                    className="img-fluid"
+                    src="http://lorempixel.com/1200/650/city"
                   />
                 </div>
               </div>
               <div className="row">
                 <div className="col-6 quarter">
                   <img
-                    class="img-fluid"
-                    src="http://lorempixel.com/800/225/fashion"
+                    className="img-fluid"
+                    src="http://lorempixel.com/1200/650/fashion"
                   />
                 </div>
                 <div className="col-6 quarter">
                   <img
-                    class="img-fluid"
-                    src="http://lorempixel.com/800/225/people"
+                    className="img-fluid"
+                    src="http://lorempixel.com/1200/650/people"
                   />
                 </div>
               </div>
