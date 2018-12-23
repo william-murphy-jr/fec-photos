@@ -14,11 +14,10 @@ const getGalleryImages = function(req, res) {
           primaryImage: false
         },
         limit: 10
-      }).then(function(data2) {
-        res.json(data.concat(data2));
-      });
-
-      // console.log("******** DATA *******", data);
+      })
+        .then(function(data2) {
+          res.json(data.concat(data2));
+        });
     });
 };
 

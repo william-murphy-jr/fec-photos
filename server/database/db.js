@@ -28,9 +28,9 @@ const DISPLAY_IMAGE = sequelize.define('display_image', {
 
 const log = console.log('seedDb just seeded the database gallery with records!!!');
 
-// { "force": true } will recreate the table 
+// sequelize.sync({ "force": true }) will recreate the table
 // EVERY TIME the database is called.
-sequelize.sync({"force": true})
+sequelize.sync()
   .then(function() {
     seedDb.seedDb(null, log);
     console.log('sequelize.sync() it Baby!!!');
