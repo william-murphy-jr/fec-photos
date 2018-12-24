@@ -17,6 +17,14 @@ For test outline all elements
   border: 1px solid darkgrey;
 }
 
+.overlay-img{
+  opacity: 0.5;
+}
+
+.non-overlay-img {
+  opacity: 1;
+}
+
 .img-fluid:hover {
   z-index: 2;
   -webkit-transition: all 200ms ease-in;
