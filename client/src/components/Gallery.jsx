@@ -56,42 +56,17 @@ class Gallery extends React.Component {
       );
     } else {
       return (
-        <div className="container-fluid" style={{ marginLeft: '0px' }}>
+        <div className="container-fluid" style={{ marginLeft: "0px" }}>
           <div className="row">
-            <div className="col-6 half">
-              <img
-                className="img-fluid"
-                src="http://lorempixel.com/1200/650/transport"
-              />
-            </div>
+            <GalleryHalf image={"http://lorempixel.com/1200/650/transport"} />            
             <div className="col-6">
               <div className="row">
-                <div className="col-6 quarter">
-                  <img
-                    className="img-fluid"
-                    src="http://lorempixel.com/1200/650/transport"
-                  />
-                </div>
-                <div className="col-6 quarter">
-                  <img
-                    className="img-fluid"
-                    src="http://lorempixel.com/1200/650/city"
-                  />
-                </div>
+                <GalleryQuarter image={"http://lorempixel.com/1200/650/transport"} />
+                <GalleryQuarter image={"http://lorempixel.com/1200/650/city"} />
               </div>
               <div className="row">
-                <div className="col-6 quarter">
-                  <img
-                    className="img-fluid"
-                    src="http://lorempixel.com/1200/650/fashion"
-                  />
-                </div>
-                <div className="col-6 quarter">
-                  <img
-                    className="img-fluid"
-                    src="http://lorempixel.com/1200/650/people"
-                  />
-                </div>
+                <GalleryQuarter image={"http://lorempixel.com/1200/650/fashion"} />
+                <GalleryQuarter image={"http://lorempixel.com/1200/650/people"} />
               </div>
             </div>
           </div>
