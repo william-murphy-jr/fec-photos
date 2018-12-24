@@ -2,8 +2,6 @@ import React from 'react';
 
 const GalleryHalf = function (props) {
   console.log('GalleryHalf: ');
-  console.log('props.image: ', props.image);
-  console.log("********* props.highLight *********: ", props.highLight);
 
   return (
     <div className="col-6 half">

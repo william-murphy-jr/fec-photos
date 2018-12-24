@@ -1,15 +1,13 @@
 import React from 'react';
 
-const GalleryQuarter3 = function(props) {
-  let highLight = props.highLight3;
-  
-  console.log('Quarter -- highLight: ', highLight);
+const GalleryQuarter = function(props) {
+  // console.log('Quarter -- props.highLight: ', props.highLight);
 
   return (
     <div className="col-6 quarter">
       <img
         className="img-fluid"
-        className={highLight ? 'img-fluid' : 'img-fluid overlay-img'}
+        className={props.highLight ? 'img-fluid' : 'img-fluid overlay-img'}
         data-position={props.position}
         onMouseOver={props.hoverOn}
         onMouseOut={props.hoverOff}
@@ -17,5 +15,5 @@ const GalleryQuarter3 = function(props) {
       />
     </div>
   );
-}
-export default GalleryQuarter3;
+};
+export default GalleryQuarter;
