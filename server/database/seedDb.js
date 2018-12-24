@@ -6,9 +6,6 @@ const seedDb = function(numberOfRecords, callback) {
   let width = 1200;
   let height = 650;
   
-  // console.log('*************************** fileName: faker.image.imageUrl(width, height),',
-  //   faker.image.food(width, height));
-  
   for (let i = 0; i < numberOfRecords; i++) {
 
     // 1 out of 10 will be a primary photo Maybe?

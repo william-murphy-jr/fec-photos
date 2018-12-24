@@ -58,12 +58,12 @@ class Gallery extends React.Component {
             <GalleryHalf image0={image0} hoverOn={this.hoverOn} hoverOff={this.hoverOff} />
             <div className="col-6">
               <div className="row">
-                <GalleryQuarter image={image1} />
-                <GalleryQuarter image={image2} />
+                <GalleryQuarter image={image1} hoverOn={this.hoverOn} hoverOff={this.hoverOff} />
+                <GalleryQuarter image={image2} hoverOn={this.hoverOn} hoverOff={this.hoverOff} />
               </div>
               <div className="row">
-                <GalleryQuarter image={image3} />
-                <GalleryQuarter image={image4} />
+                <GalleryQuarter image={image3} hoverOn={this.hoverOn} hoverOff={this.hoverOff} />
+                <GalleryQuarter image={image4} hoverOn={this.hoverOn} hoverOff={this.hoverOff} />
               </div>
             </div>
           </div>
