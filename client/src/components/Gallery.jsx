@@ -51,7 +51,7 @@ class Gallery extends React.Component {
       // let highLight = 'hightLight' + i;
       // let highLightTarget = {};
       if (targetPos === i) {
-        hl.splice(i, i + 1, {'value': true});
+        hl.splice(i, 1, {'value': true});
         // highLightTarget[highLight] = true;
         console.log('hl: ', hl);
         this.setState({highLight: hl});
@@ -123,7 +123,8 @@ class Gallery extends React.Component {
 
             <div className="col-6">
               <div className="row">
-                <GalleryQuarter1 image={image1}
+                <GalleryQuarter1
+                  image={image1}
                   position={1}
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
