@@ -7,6 +7,8 @@ const GalleryHalf = function (props) {
     <div className="col-6 half">
       <img
         className="img-fluid"
+        onMouseOver={props.hoverOn}
+        onMouseOut={props.hoverOff}
         src={props.image0}
       />
     </div>

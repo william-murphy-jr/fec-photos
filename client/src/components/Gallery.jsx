@@ -7,7 +7,12 @@ class Gallery extends React.Component {
     super(props);
     this.state = {
       images: [],
+      highLight: true,
+      overLay: false,
     };
+
+    this.hoverOn = this.hoverOn.bind(this);
+    this.hoverOff = this.hoverOff.bind(this);
 
   }
 
@@ -26,6 +31,16 @@ class Gallery extends React.Component {
     });
   }
 
+  hoverOn(e) {
+    console.log('hoverOn');
+    this.setState({highLight: true});
+  }
+  
+  hoverOff(e) {
+    console.log('hoverOff');
+    this.setState({ highLight: false });
+  }
+
 
   render() {
 
@@ -38,9 +53,9 @@ class Gallery extends React.Component {
       let image4 = this.state.images[0].fileName.trim() + '/nightlife';
 
       return (
-        <div className="container-fluid" style={{ marginLeft: "0px" }}>
+        <div className="container-fluid" style={{ marginLeft: '0px' }}>
           <div className="row">
-            <GalleryHalf image0={image0} />
+            <GalleryHalf image0={image0} hoverOn={this.hoverOn} hoverOff={this.hoverOff} />
             <div className="col-6">
               <div className="row">
                 <GalleryQuarter image={image1} />
