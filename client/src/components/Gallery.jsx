@@ -1,5 +1,6 @@
 import React from 'react';
 import GalleryHalf from './GalleryHalf.jsx';
+import GalleryQuarter from './GalleryQuarter.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -37,37 +38,17 @@ class Gallery extends React.Component {
       let image4 = this.state.images[0].fileName.trim() + '/nightlife';
 
       return (
-        <div className="container-fluid" style={{ marginLeft: '0px' }}>
+        <div className="container-fluid" style={{ marginLeft: "0px" }}>
           <div className="row">
             <GalleryHalf image0={image0} />
             <div className="col-6">
               <div className="row">
-                <div className="col-6 quarter">
-                  <img
-                    className="img-fluid"
-                    src={ image1}
-                  />
-                </div>
-                <div className="col-6 py-5 quarter">
-                  <img
-                    className="img-fluid"
-                    src={ image2 }
-                  />
-                </div>
+                <GalleryQuarter image={image1} />
+                <GalleryQuarter image={image2} />
               </div>
               <div className="row">
-                <div className="col-6 px-5 quarter">
-                  <img
-                    className="img-fluid"
-                    src={ image3}
-                  />
-                </div>
-                <div className="col-6 px-5 quarter">
-                  <img
-                    className="img-fluid"
-                    src={ image4 }
-                  />
-                </div>
+                <GalleryQuarter image={image3} />
+                <GalleryQuarter image={image4} />
               </div>
             </div>
           </div>
