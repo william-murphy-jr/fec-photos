@@ -5,7 +5,7 @@ const getGalleryImages = require('../server/controller/gallery');
 
 const app = express();
 
-app.set('PORT', 3000);
+app.set('PORT', 9999)
 app.use(morgan('dev'));
 
 app.use('/', express.static(__dirname + './../public'));

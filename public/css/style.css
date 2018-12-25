@@ -14,7 +14,7 @@ For test outline all elements
 
 .half, .quarter {
   overflow: hidden;
-  border: 1px solid darkgrey;
+  border: 1px solid rgb(72, 72, 72);
 }
 
 .overlay-img{
@@ -35,4 +35,5 @@ For test outline all elements
   -moz-transform: scale(1.05);
   transition: all 200ms ease-in;
   transform: scale(1.05);
+  cursor: pointer;
 }

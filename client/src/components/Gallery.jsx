@@ -20,13 +20,12 @@ class Gallery extends React.Component {
     let self = this;
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/gallery'
+      url: 'http://localhost:9999/gallery'
     }).done(function(data) {
       console.log(data);
       console.log('data[0].fileName: ', data[0].fileName);
       // alert('Returned Data Saved: ' + data);
       self.setState({ images: data });
-      let theImage = self.state.images[0].fileName.trim() + '/city';
     });
   }
 
