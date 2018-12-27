@@ -25,6 +25,8 @@
     "babel-loader": "^8.0.4",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "faker": "^4.1.0",
+    "jest": "^23.6.0",
+    "puppeteer": "^1.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "webpack": "^4.28.0",
