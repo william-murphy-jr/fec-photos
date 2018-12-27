@@ -17,6 +17,7 @@ class Gallery extends React.Component {
     this.hoverOn = this.hoverOn.bind(this);
     this.hoverOff = this.hoverOff.bind(this);
     this.handleImageClickShowCarousel = this.handleImageClickShowCarousel.bind(this);
+    this.handleImageClickHideCarousel = this.handleImageClickHideCarousel.bind(this);
   }
 
   componentDidMount() {
@@ -46,7 +47,7 @@ class Gallery extends React.Component {
   }
   
   hoverOff(e) {
-    // console.lsog('hoverOff');
+    // console.log('hoverOff');
     // reset all
     this.setState({ highLight:
       [{ 'value': true },{ 'value': true },
@@ -57,9 +58,12 @@ class Gallery extends React.Component {
   handleImageClickShowCarousel(e) {
     console.log('Image clicked: ', e.target);
     this.setState({showCarousel: true});
-
   }
-
+  
+  handleImageClickHideCarousel(e) {
+    console.log('Carousle close X clicked: ', e.target);
+    this.setState({showCarousel: false});
+  }
 
   render() {
 
@@ -75,7 +79,8 @@ class Gallery extends React.Component {
         <div className="container-fluid" style={{ marginLeft: '0px' }}>
           <Carousel
             showCarousel={this.state.showCarousel}
-            hideCarousel={this.state.hideCarousel}/>
+            hideCarousel={this.state.hideCarousel}
+            handleImageClickHideCarousel={this.handleImageClickHideCarousel} />
           <div className="row">
             <GalleryHalf
               image={image0}
