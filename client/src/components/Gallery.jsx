@@ -9,7 +9,7 @@ class Gallery extends React.Component {
       images: [],
       highLight: [{ 'value': true },
         { 'value': true }, { 'value': true },
-        { 'value': true }, { 'value':true}],
+        { 'value': true }, { 'value': true }],
     };
 
     this.hoverOn = this.hoverOn.bind(this);

@@ -4,7 +4,7 @@ const GalleryQuarter = function(props) {
   // console.log('Quarter -- props.highLight: ', props.highLight);
 
   return (
-    <div className="col-6 quarter">
+    <div className={"col-6 quarter" + " pos" + props.position}>
       <img
         className="img-fluid"
         className={props.highLight ? 'img-fluid' : 'img-fluid overlay-img'}

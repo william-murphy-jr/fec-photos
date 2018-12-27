@@ -4,8 +4,7 @@ const GalleryHalf = function (props) {
   console.log('GalleryHalf: ');
 
   return (
-    <div className="col-6 half">
-      <h1 className="bnb-title">Best BnB Gallery</h1>
+    <div className="col-6 half" data-position={props.position}>
       <img
         className={props.highLight ? 'img-fluid' : 'img-fluid overlay-img'}
         data-position={props.position}

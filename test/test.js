@@ -22,23 +22,18 @@ beforeAll(async () => {
     args: [`--window-size=${width},${height}`]
   });
   page = await browser.newPage();
-  // console.log('page: ', page);
 
   await page.setViewport({
     width,
     height
   });
 });
-afterAll(() => {
-  // browser.close();
-});
 
 afterAll(() => {
   browser.close();
 });
 
-
-describe('title on page', () => {
+describe('Galley Component Tests', () => {
 
   beforeEach(() => {
      page.goto(pageUrl, {
@@ -46,27 +41,63 @@ describe('title on page', () => {
      });
   });
 
-  test('assert that the gallery <title> is correct', async () => {
-    const title1 = 'Image Gallery';
+  test('assert that the page gallery title is correct', async () => {
     // await page.waitFor(15000);
     await page.waitForNavigation(); // The promise resolves after navigation has finished
     const title = await page.title();
-    // const title = await page.$eval('bozz, e => e.innerHtml);
     expect(title).toEqual('Image Gallery');
-
-    // await bodyHandle.dispose();
 
   });  // end test
 
-  test('gallaryHalf is correct', async () => {
-    const h1 = '.bnb-title';
-    await page.waitForNavigation(); // The promise resolves after navigation has finished
-    const title = await page.$eval(h1, e => e.textContent);
-    expect(title).toEqual('Best BnB Gallery');
+  test('gallaryHalf component at position 0 exits', async () => {
+    const galleryHalf = '.half';
 
-    // await bodyHandle.dispose();
+    await page.waitForNavigation();
+    const frameExist = await page.$eval(galleryHalf, el => {
+      return el ? true : false;
+    });
+    expect(frameExist).toBe(true);
+  });
 
-  }); // test
+  test('gallaryQuarter component at position 1 exits', async () => {
+    const galleryQtr = '.pos1';
+
+    await page.waitForNavigation();
+    const frameExist = await page.$eval(galleryQtr, el => {
+      return el ? true : false;
+    });
+    expect(frameExist).toBe(true);
+  });
+
+   test('gallaryQuarter component at position 2 exits', async () => {
+     const galleryQtr = '.pos2';
+
+     await page.waitForNavigation();
+     const frameExist = await page.$eval(galleryQtr, el => {
+       return el ? true : false;
+     });
+     expect(frameExist).toBe(true);
+   });
+
+    test('gallaryQuarter component at position 3 exits', async () => {
+      const galleryQtr = '.pos3';
+
+      await page.waitForNavigation();
+      const frameExist = await page.$eval(galleryQtr, el => {
+        return el ? true : false;
+      });
+      expect(frameExist).toBe(true);
+    });
+
+    test('gallaryQuarter component at position 4 exits', async () => {
+      const galleryQtr = '.pos4';
+
+      await page.waitForNavigation();
+      const frameExist = await page.$eval(galleryQtr, el => {
+        return el ? true : false;
+      });
+      expect(frameExist).toBe(true);
+    });
 
   // test('check for gallery components', async () => {
   //   test('renders', () => {
@@ -81,26 +112,7 @@ describe('title on page', () => {
 
   // });
 
-});
-//   beforeEach(() => {
-//     page.goto(pageUrl, {waitUntil: 'networkidle2'});
-//   });
-
-//   test('assert that <title> is correct', async () => {
-//     const title = await page.title();
-
-//     expect(title).toBe(
-//       'Image Gallery'
-//     );
-//     // Insert more test starting here
-
-//   });
-
-//   // test('has primary image', () => {
-//   //   let div = '.col-6 .half img'
-//   // });
-  
-// });
+});  // describe block
 
 // describe("<GalleryHalf />", () => {
 //   it("renders an image", () => {
