@@ -1,6 +1,7 @@
 import React from 'react';
 import GalleryHalf from './GalleryHalf.jsx';
 import GalleryQuarter from './GalleryQuarter.jsx';
+import Carousel from '../components/Carousel.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Gallery extends React.Component {
       highLight: [{ 'value': true },
         { 'value': true }, { 'value': true },
         { 'value': true }, { 'value': true }],
+      showGallery: false,
     };
 
     this.hoverOn = this.hoverOn.bind(this);
@@ -54,6 +56,8 @@ class Gallery extends React.Component {
 
   handleImageClick(e) {
     console.log('Image clicked: ', e.target);
+    this.setState({showGallery: true});
+
   }
 
 
@@ -69,6 +73,7 @@ class Gallery extends React.Component {
 
       return (
         <div className="container-fluid" style={{ marginLeft: '0px' }}>
+          <Carousel />
           <div className="row">
             <GalleryHalf
               image={image0}
