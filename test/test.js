@@ -4,7 +4,7 @@ const Enzyme = require('enzyme');
 const shallow = require('enzyme');
 const mount = require('enzyme');
 
-const GalleryHalf = require('../client/src/components/GalleryHalf');
+// const GalleryHalf = require('../client/src/components/GalleryHalf');
 
 const pageUrl = 'http://localhost:9999';
 
@@ -13,7 +13,7 @@ let browser;
 const width = 1280;
 const height = 720;
 
-Enzyme.configure({ adapter: new Adapter() });
+// Enzyme.configure({ adapter: new Adapter() });
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
@@ -68,24 +68,18 @@ describe('title on page', () => {
 
   }); // test
 
-  test('check for gallery components', async () => {
-    test('renders', () => {
-      const wrapper = shallow(<GalleryHalf);
+  // test('check for gallery components', async () => {
+  //   test('renders', () => {
+  //     const wrapper = shallow(<GalleryHalf />);
 
-      expect(wrapper.exist()).toBe(true);
-    });
+  //     expect(wrapper.exist()).toBe(true);
+  //   });
 
-    // const galleryHalf = shallow(GalleryHalf);
-    // const wrapper = mount(GalleryHalf.toString());
-    // expect(galleryHalf.find('img').prop('src')).toBe(typeof 'string')
+  //   // const galleryHalf = shallow(GalleryHalf);
+  //   // const wrapper = mount(GalleryHalf.toString());
+  //   // expect(galleryHalf.find('img').prop('src')).toBe(typeof 'string')
 
-    E
-
-
-
-
-    
-  });
+  // });
 
 });
 //   beforeEach(() => {
