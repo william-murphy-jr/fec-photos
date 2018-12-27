@@ -1,4 +1,4 @@
-For test outline all elements
+/* For test outline all elements */
 * {
   /* outline: 1px solid darkgrey; */
 }
@@ -14,8 +14,8 @@ For test outline all elements
 
 .half, .quarter {
   overflow: hidden;
-  border: 1px solid rgb(72, 72, 72);
-  background-color: #484848;
+  border: 1px solid #484848;  /* rgb(72, 72, 72) charcoal */
+  background-color: #484848;  /* charcoal */
 }
 
 .overlay-img{
@@ -37,4 +37,25 @@ For test outline all elements
   transition: all 400ms ease-in;
   transform: scale(1.1);
   cursor: pointer;
+}
+
+.carousel {
+  position: fixed;  /* Sit on top of the page content */
+  /* display: none; */ /* Hidden by default */
+  width: 100%;  /* Full width (cover the whole page) */
+  height: 100%;   /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(72, 72, 72, 1.0);  /* Black background with opacity */
+  z-index: 2;   /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;   /* Add a pointer on hover */
+}
+
+.hide-carousel {
+  display: none
+}
+.show-carousel {
+  display: block;
 }

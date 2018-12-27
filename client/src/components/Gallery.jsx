@@ -11,7 +11,7 @@ class Gallery extends React.Component {
       highLight: [{ 'value': true },
         { 'value': true }, { 'value': true },
         { 'value': true }, { 'value': true }],
-      showGallery: false,
+      showCarousel: false,
     };
 
     this.hoverOn = this.hoverOn.bind(this);
@@ -56,7 +56,7 @@ class Gallery extends React.Component {
 
   handleImageClick(e) {
     console.log('Image clicked: ', e.target);
-    this.setState({showGallery: true});
+    this.setState({showCarousel: true});
 
   }
 
@@ -73,7 +73,7 @@ class Gallery extends React.Component {
 
       return (
         <div className="container-fluid" style={{ marginLeft: '0px' }}>
-          <Carousel />
+          <Carousel showCarousel={this.state.showCarousel}/>
           <div className="row">
             <GalleryHalf
               image={image0}
