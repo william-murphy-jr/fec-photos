@@ -1,11 +1,19 @@
-// const React = require('react');
+const React = require('react');
 const puppeteer = require('puppeteer');
+const Enzyme = require('enzyme');
+const shallow = require('enzyme');
+const mount = require('enzyme');
+
+const GalleryHalf = require('../client/src/components/GalleryHalf');
+
 const pageUrl = 'http://localhost:9999';
 
 let page;
 let browser;
 const width = 1280;
 const height = 720;
+
+Enzyme.configure({ adapter: new Adapter() });
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
@@ -40,11 +48,8 @@ describe('title on page', () => {
 
   test('assert that the gallery <title> is correct', async () => {
     const title1 = 'Image Gallery';
-    // const title = await page.evaluate(h1.textContent);
-    page.waitFor(15000);
-    await page.waitForNavigation();
-    // const title = 'Best BnB Gallery';
-    // const title = await page.$eval(h1, e => e.textContent);
+    // await page.waitFor(15000);
+    await page.waitForNavigation(); // The promise resolves after navigation has finished
     const title = await page.title();
     // const title = await page.$eval('bozz, e => e.innerHtml);
     expect(title).toEqual('Image Gallery');
@@ -55,19 +60,31 @@ describe('title on page', () => {
 
   test('gallaryHalf is correct', async () => {
     const h1 = '.bnb-title';
-    // const title1 = 'Image Gallery';
-    // const title = await page.evaluate(h1.textContent);
-    // await //#endregionpage.waitFor(15000);
-    // await page.waitForNavigation();
-    page.waitForNavigation(); // The promise resolves after navigation has finished
-    // const title = 'Best BnB Gallery';
+    await page.waitForNavigation(); // The promise resolves after navigation has finished
     const title = await page.$eval(h1, e => e.textContent);
-    // const title = await page.$eval('.bnb-title', e => e.outerHtml);
-    // const title = 'Best BnB Gallery';
     expect(title).toEqual('Best BnB Gallery');
 
     // await bodyHandle.dispose();
 
+  }); // test
+
+  test('check for gallery components', async () => {
+    test('renders', () => {
+      const wrapper = shallow(<GalleryHalf);
+
+      expect(wrapper.exist()).toBe(true);
+    });
+
+    // const galleryHalf = shallow(GalleryHalf);
+    // const wrapper = mount(GalleryHalf.toString());
+    // expect(galleryHalf.find('img').prop('src')).toBe(typeof 'string')
+
+    E
+
+
+
+
+    
   });
 
 });
