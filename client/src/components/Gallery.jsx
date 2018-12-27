@@ -16,7 +16,7 @@ class Gallery extends React.Component {
 
     this.hoverOn = this.hoverOn.bind(this);
     this.hoverOff = this.hoverOff.bind(this);
-    this.handleImageClick = this.handleImageClick.bind(this);
+    this.handleImageClickShowCarousel = this.handleImageClickShowCarousel.bind(this);
   }
 
   componentDidMount() {
@@ -54,7 +54,7 @@ class Gallery extends React.Component {
     });
   }
 
-  handleImageClick(e) {
+  handleImageClickShowCarousel(e) {
     console.log('Image clicked: ', e.target);
     this.setState({showCarousel: true});
 
@@ -73,7 +73,9 @@ class Gallery extends React.Component {
 
       return (
         <div className="container-fluid" style={{ marginLeft: '0px' }}>
-          <Carousel showCarousel={this.state.showCarousel}/>
+          <Carousel
+            showCarousel={this.state.showCarousel}
+            hideCarousel={this.state.hideCarousel}/>
           <div className="row">
             <GalleryHalf
               image={image0}
@@ -81,7 +83,7 @@ class Gallery extends React.Component {
               hoverOn={this.hoverOn}
               hoverOff={this.hoverOff}
               highLight={this.state.highLight[0].value}
-              handleImageClick={this.handleImageClick}
+              handleImageClickShowCarousel={this.handleImageClickShowCarousel}
             />
             <div className="col-6">
               <div className="row">
@@ -91,7 +93,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[1].value}
-                  handleImageClick={this.handleImageClick}
+                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
                 />
                 <GalleryQuarter
                   image={image2}
@@ -99,7 +101,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[2].value}
-                  handleImageClick={this.handleImageClick}
+                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
                 />
               </div>
               <div className="row">
@@ -109,7 +111,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[3].value}
-                  handleImageClick={this.handleImageClick}
+                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
                 />
                 <GalleryQuarter
                   image={image4}
@@ -117,7 +119,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[4].value}
-                  handleImageClick={this.handleImageClick}
+                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
                 />
               </div>
             </div>
