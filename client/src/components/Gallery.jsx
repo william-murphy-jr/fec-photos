@@ -14,6 +14,7 @@ class Gallery extends React.Component {
 
     this.hoverOn = this.hoverOn.bind(this);
     this.hoverOff = this.hoverOff.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   componentDidMount() {
@@ -51,6 +52,10 @@ class Gallery extends React.Component {
     });
   }
 
+  handleImageClick(e) {
+    console.log('Image clicked: ', e.target);
+  }
+
 
   render() {
 
@@ -71,8 +76,8 @@ class Gallery extends React.Component {
               hoverOn={this.hoverOn}
               hoverOff={this.hoverOff}
               highLight={this.state.highLight[0].value}
+              handleImageClick={this.handleImageClick}
             />
-
             <div className="col-6">
               <div className="row">
                 <GalleryQuarter
@@ -81,6 +86,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[1].value}
+                  handleImageClick={this.handleImageClick}
                 />
                 <GalleryQuarter
                   image={image2}
@@ -88,6 +94,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[2].value}
+                  handleImageClick={this.handleImageClick}
                 />
               </div>
               <div className="row">
@@ -97,6 +104,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[3].value}
+                  handleImageClick={this.handleImageClick}
                 />
                 <GalleryQuarter
                   image={image4}
@@ -104,6 +112,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[4].value}
+                  handleImageClick={this.handleImageClick}
                 />
               </div>
             </div>

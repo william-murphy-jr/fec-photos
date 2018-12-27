@@ -11,6 +11,7 @@ const GalleryHalf = function (props) {
         onMouseOver={props.hoverOn}
         onMouseOut={props.hoverOff}
         src={props.image}
+        onClick={props.handleImageClick}
       />
     </div>
   );
