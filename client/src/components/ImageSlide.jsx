@@ -18,16 +18,6 @@ const ImageSlide = (props) => {
 
   return (
     <div className="image-slide" style={styles} >
-      <Arrow
-        direction="left"
-        clickFunction={props.previousSlide}
-        // glyph="&#9664;"
-      />
-      <Arrow
-        direction="right"
-        clickFunction={props.nextSlide}
-        // glyph="&#9654;"
-      />
     </div>
   );
 };
