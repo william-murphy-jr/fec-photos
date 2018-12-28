@@ -17,4 +17,5 @@ const GalleryQuarter = function(props) {
     </div>
   );
 };
+
 export default GalleryQuarter;

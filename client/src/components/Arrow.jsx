@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Arrow = function(props) {
-
   return (
     <div
       className={`slide-arrow ${props.direction}`}
@@ -10,4 +9,5 @@ const Arrow = function(props) {
     </div>
   );
 };
+
 export default Arrow;

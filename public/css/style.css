@@ -1,7 +1,7 @@
-/* For test outline all elements */
-* {
-  /* outline: 1px solid darkgrey; */
-}
+/* Next rule will outline ***ALL*** elements */
+/* * {
+  outline: 1px solid darkgrey;
+} */
 
 .quarter {
   padding: 0 !important;

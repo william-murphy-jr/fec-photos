@@ -1,5 +1,4 @@
 import React from 'react';
-import Arrow from './Arrow.jsx';
 
 const ImageSlide = (props) => {
   const styles = {
@@ -21,4 +20,5 @@ const ImageSlide = (props) => {
     </div>
   );
 };
+
 export default ImageSlide;

@@ -15,6 +15,9 @@ class Gallery extends React.Component {
       currentImageIndex: 0,
     };
 
+    this.DEBUG = false;
+    this.DEBUG_2 = false;
+
     this.hoverOn = this.hoverOn.bind(this);
     this.hoverOff = this.hoverOff.bind(this);
     this.handleImageClickShowCarousel = this.handleImageClickShowCarousel.bind(this);
@@ -30,15 +33,14 @@ class Gallery extends React.Component {
       method: 'GET',
       url: 'http://localhost:9999/gallery'
     }).done(function(data) {
-      console.log(data);
-      console.log('data[0].fileName: ', data[0].fileName);
+      if (this.DEBUG_2) { console.log(data); } 
+      if (this.DEBUG_2) { console.log('data[0].fileName: ', data[0].fileName); }
       // alert('Returned Data Saved: ' + data);
       self.setState({ images: data });
     });
   }
 
   hoverOn(e) {
-    // console.log(' ** hoverOn ** ');
     let targetPos = +e.target.dataset.position;
 
     let hl = [{ 'value': false }, { 'value': false }, { 'value': false }, { 'value': false }, { 'value': false }];
@@ -51,11 +53,9 @@ class Gallery extends React.Component {
   }
   
   hoverOff(e) {
-    // console.log('hoverOff');
-    // reset all
     this.setState({ highLight:
-      [{ 'value': true },{ 'value': true },
-        { 'value': true }, { 'value': true }, { 'value':true }]
+      [{ 'value': true }, { 'value': true },
+        { 'value': true }, { 'value': true }, { 'value': true }]
     });
   }
 
@@ -74,7 +74,7 @@ class Gallery extends React.Component {
     const lastIndex = this.state.images.length - 1;
     const currentImageIndex = this.state.currentImageIndex;
     const shouldResetIndex = currentImageIndex === 0;
-    const index = shouldResetIndex ? lastIndex : currentImageIndex -1;
+    const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
 
     this.setState({currentImageIndex: index});
   }
@@ -95,16 +95,16 @@ class Gallery extends React.Component {
 
   render() {
 
-    
     if (this.state.images.length) {
 
-      console.log('this.state.images:' , this.state.images);
-      console.log('this.state.images:' , this.state.images[this.state.currentImageIndex]);
-      console.log('this.state.currentImageIndex :' , this.state.currentImageIndex);
-      console.log('this.state.images[this.state.currentImageIndex].fileName:' , this.state.images[this.state.currentImageIndex].fileName);
+
+      if (this.DEBUG) { console.log('this.state.images:', this.state.images); }
+      if (this.DEBUG) { console.log('this.state.images:', this.state.images[this.state.currentImageIndex]); }
+      if (this.DEBUG) { console.log('this.state.currentImageIndex :', this.state.currentImageIndex); }
+      if (this.DEBUG) { console.log('this.state.images[this.state.currentImageIndex].fileName:', this.state.images[this.state.currentImageIndex].fileName); }
       
       let image0 = this.state.images[0].fileName.trim();
-      let image1 = this.state.images[1].fileName;
+      let image1 = this.state.images[1].fileName.trim();
       let image2 = this.state.images[2].fileName.trim();
       let image3 = this.state.images[7].fileName.trim();
       let image4 = this.state.images[4].fileName.trim();
@@ -172,17 +172,17 @@ class Gallery extends React.Component {
       );
     } else {
       return (
-        <div className="container-fluid" style={{ marginLeft: "0px" }}>
+        <div className="container-fluid" style={{ marginLeft: '0px' }}>
           <div className="row">
-            <GalleryHalf image={"http://lorempixel.com/1200/650/transport"} />            
+            <GalleryHalf image={'http://lorempixel.com/1200/650/transport'} />            
             <div className="col-6">
               <div className="row">
-                <GalleryQuarter image={"http://lorempixel.com/1200/650/transport"} />
-                <GalleryQuarter image={"http://lorempixel.com/1200/650/city"} />
+                <GalleryQuarter image={'http://lorempixel.com/1200/650/transport'} />
+                <GalleryQuarter image={'http://lorempixel.com/1200/650/city'} />
               </div>
               <div className="row">
-                <GalleryQuarter image={"http://lorempixel.com/1200/650/fashion"} />
-                <GalleryQuarter image={"http://lorempixel.com/1200/650/people"} />
+                <GalleryQuarter image={'http://lorempixel.com/1200/650/fashion'} />
+                <GalleryQuarter image={'http://lorempixel.com/1200/650/people'} />
               </div>
             </div>
           </div>
