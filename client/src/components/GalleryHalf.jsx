@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GalleryHalf = function (props) {
-  console.log('GalleryHalf: ');
+  // console.log('GalleryHalf: ');
 
   return (
     <div className="col-6 half" data-position={props.position}>

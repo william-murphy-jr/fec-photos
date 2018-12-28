@@ -18,6 +18,9 @@ class Gallery extends React.Component {
     this.hoverOff = this.hoverOff.bind(this);
     this.handleImageClickShowCarousel = this.handleImageClickShowCarousel.bind(this);
     this.handleImageClickHideCarousel = this.handleImageClickHideCarousel.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
+    this.previousSlide = this.previousSlide.bind(this);
   }
 
   componentDidMount() {
@@ -61,9 +64,19 @@ class Gallery extends React.Component {
   }
   
   handleImageClickHideCarousel(e) {
-    console.log('Carousle close X clicked: ', e.target);
+    console.log('Carousel close X clicked: ', e.target);
     this.setState({showCarousel: false});
   }
+
+  previousSlide(e) {
+    console.log('PreviousSlide e.target', e.target);
+  }
+
+  nextSlide(e) {
+    console.log('NextSlide e.target', e.target);
+  }
+
+
 
   render() {
 
