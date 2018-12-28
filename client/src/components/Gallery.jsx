@@ -104,9 +104,9 @@ class Gallery extends React.Component {
       console.log('this.state.images[this.state.currentImageIndex].fileName:' , this.state.images[this.state.currentImageIndex].fileName);
       
       let image0 = this.state.images[0].fileName.trim();
-      let image1 = this.state.images[1].fileName.trim();
+      let image1 = this.state.images[1].fileName;
       let image2 = this.state.images[2].fileName.trim();
-      let image3 = this.state.images[3].fileName.trim();
+      let image3 = this.state.images[7].fileName.trim();
       let image4 = this.state.images[4].fileName.trim();
 
       return (

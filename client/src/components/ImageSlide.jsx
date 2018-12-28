@@ -25,12 +25,12 @@ const ImageSlide = (props) => {
       <Arrow
         direction="left"
         clickFunction={props.previousSlide}
-        glyph="&#9664;"
+        // glyph="&#9664;"
       />
       <Arrow
         direction="right"
         clickFunction={props.nextSlide}
-        glyph="&#9654;"
+        // glyph="&#9654;"
       />
     </div>
   );

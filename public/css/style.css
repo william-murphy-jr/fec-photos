@@ -58,6 +58,8 @@
 }
 .show-carousel {
   display: block;
+  display: flex;
+  align-items: center;
 }
 
 .close {
@@ -68,4 +70,25 @@
 
 .close:hover {
   cursor: pointer;
+}
+
+.fa-angle-right,
+.fa-angle-left {
+  font-size: 4em;
+}
+
+.fa-angle-left {
+  position: relative !important;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+  /* float:left; */
+}
+  
+.fa-angle-right {
+  position: relative !important;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+  /* float: right; */
 }
