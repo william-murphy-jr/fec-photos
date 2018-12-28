@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageSlide from './ImageSlide.jsx';
 import Arrow from './Arrow.jsx';
+import Indicator from './Indicator.jsx';
 
 const Carousel = function (props) {
 
@@ -16,6 +17,7 @@ const Carousel = function (props) {
           nextSlide={props.nextSlide}
         />
       </div>
+      <Indicator />
       <Arrow
         direction="right"
         clickFunction={props.nextSlide}

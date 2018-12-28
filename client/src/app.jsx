@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Gallery from './components/Gallery.jsx';
 
-ReactDOM.render(<Gallery />, document.getElementById('app'));
+ReactDOM.render(<Gallery />, document.getElementById('gallery'));
 
 
 

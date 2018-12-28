@@ -5,7 +5,7 @@ const ImageSlide = (props) => {
     position: 'fixed',
     height: '70%',
     width: '50%',
-    top: '12.5%',
+    top: '11.5%',
     left: '25%',
     right: '0',
     bottom: '0',
