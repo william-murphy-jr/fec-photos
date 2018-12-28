@@ -77,8 +77,8 @@
 
 .close {
   position: absolute;
-  top: 0.1em;
-  right:0.5em;
+  top: 0em;
+  right: 0.125em;
   color: white;
   font-size: 4em;
   padding: 0 14px;
