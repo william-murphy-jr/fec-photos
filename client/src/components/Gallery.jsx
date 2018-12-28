@@ -12,6 +12,7 @@ class Gallery extends React.Component {
         { 'value': true }, { 'value': true },
         { 'value': true }, { 'value': true }],
       showCarousel: false,
+      currentImageIndex: 0,
     };
 
     this.hoverOn = this.hoverOn.bind(this);
@@ -70,30 +71,55 @@ class Gallery extends React.Component {
 
   previousSlide(e) {
     console.log('PreviousSlide e.target', e.target);
+    const lastIndex = this.state.images.length - 1;
+    const currentImageIndex = this.state.currentImageIndex;
+    const shouldResetIndex = currentImageIndex === 0;
+    const index = shouldResetIndex ? lastIndex : currentImageIndex -1;
+
+    this.setState({currentImageIndex: index});
   }
 
   nextSlide(e) {
     console.log('NextSlide e.target', e.target);
+    const lastIndex = this.state.images.length - 1;
+    const currentImageIndex = this.state.currentImageIndex;
+    const shouldResetIndex = currentImageIndex === lastIndex;
+    const index = shouldResetIndex ? 0 : currentImageIndex + 1;
+
+    this.setState({
+      currentImageIndex: index
+    });
   }
 
 
 
   render() {
 
+    
     if (this.state.images.length) {
+
+      console.log('this.state.images:' , this.state.images);
+      console.log('this.state.images:' , this.state.images[this.state.currentImageIndex]);
+      console.log('this.state.currentImageIndex :' , this.state.currentImageIndex);
+      console.log('this.state.images[this.state.currentImageIndex].fileName:' , this.state.images[this.state.currentImageIndex].fileName);
       
-      let image0 = this.state.images[0].fileName.trim() + '/city';
-      let image1 = this.state.images[1].fileName.trim() + '/fashion';
-      let image2 = this.state.images[2].fileName.trim() + '/food';
-      let image3 = this.state.images[3].fileName.trim() + '/transport';
-      let image4 = this.state.images[4].fileName.trim() + '/nightlife';
+      let image0 = this.state.images[0].fileName.trim();
+      let image1 = this.state.images[1].fileName.trim();
+      let image2 = this.state.images[2].fileName.trim();
+      let image3 = this.state.images[3].fileName.trim();
+      let image4 = this.state.images[4].fileName.trim();
 
       return (
         <div className="container-fluid" style={{ marginLeft: '0px' }}>
           <Carousel
             showCarousel={this.state.showCarousel}
             hideCarousel={this.state.hideCarousel}
-            handleImageClickHideCarousel={this.handleImageClickHideCarousel} />
+            handleImageClickHideCarousel={this.handleImageClickHideCarousel}
+            nextSlide={this.nextSlide}
+            previousSlide={this.previousSlide}
+            images={this.state.images}
+            currentImageIndex={this.state.currentImageIndex}
+          />
           <div className="row">
             <GalleryHalf
               image={image0}
