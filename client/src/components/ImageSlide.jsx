@@ -4,10 +4,10 @@ import Arrow from './Arrow.jsx';
 const ImageSlide = (props) => {
   const styles = {
     position: 'fixed',
-    height: '100%',
-    width: '100%',
-    top: '0',
-    left: '0',
+    height: '70%',
+    width: '50%',
+    top: '12.5%',
+    left: '25%',
     right: '0',
     bottom: '0',
     backgroundImage: `url(${props.url})`,
@@ -18,10 +18,6 @@ const ImageSlide = (props) => {
 
   return (
     <div className="image-slide" style={styles} >
-      <span className="close"
-        onClick={props.handleImageClickHideCarousel}>
-        &times;
-      </span>
       <Arrow
         direction="left"
         clickFunction={props.previousSlide}
