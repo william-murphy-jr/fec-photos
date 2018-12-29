@@ -15,6 +15,7 @@ class Gallery extends React.Component {
       currentImageIndex: 0,
     };
 
+    // Turn on & off console.log
     this.DEBUG = false;
     this.DEBUG_2 = false;
 
@@ -28,7 +29,6 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
-    let self = this;
     $.ajax({
       method: 'GET',
       url: 'http://localhost:9999/gallery'
@@ -36,8 +36,8 @@ class Gallery extends React.Component {
       if (this.DEBUG_2) { console.log(data); } 
       if (this.DEBUG_2) { console.log('data[0].fileName: ', data[0].fileName); }
       // alert('Returned Data Saved: ' + data);
-      self.setState({ images: data });
-    });
+      this.setState({ images: data });
+    }.bind(this));
   }
 
   hoverOn(e) {
