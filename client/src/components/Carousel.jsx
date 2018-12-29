@@ -17,7 +17,7 @@ const Carousel = function (props) {
           nextSlide={props.nextSlide}
         />
       </div>
-      <Indicator />
+      <Indicator images={props.images} />
       <Arrow
         direction="right"
         clickFunction={props.nextSlide}

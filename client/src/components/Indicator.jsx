@@ -1,14 +1,14 @@
 import React from 'react';
+import Squarepip from './Squarepip.jsx';
 
-const Indicator = function() {
-
+const Indicator = function(props) {
   return (
     <div className="indicator">
-      <div className="square">ONE</div>
-      <div className="square">TWO</div>
-      <div className="square">THREE</div>
-      <div className="square">FOUR</div>
-      <div className="square">FIVE</div>
+      <div className="wrapper">
+        {props.images.map(function (image, index) {
+          return <Squarepip image={image.fileName} key={index} index={index} />;
+        })}
+      </div>
     </div>
   );
 };

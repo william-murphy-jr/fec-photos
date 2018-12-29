@@ -39,6 +39,8 @@
   cursor: pointer;
 }
 
+
+/* Carousel */
 .carousel {
   position: fixed; 
   /* display: none; */ /* Hidden by default */
@@ -110,4 +112,26 @@
 .fa-angle-left:hover,
 .fa-angle-right:hover {
   cursor: pointer;
+}
+
+.indicator {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  top: 40%
+}
+
+.squarepip {
+  /* position: absolute; */
+  z-index: 3;
+  top: 40%;
+  left: 50%;
+  width: 75px;
+  height: 30px;
+  display: inline-block;
+  margin: 0 8px;
+}
+.wrapper {
+  width: 500px;
+  overflow: hidden;
 }
