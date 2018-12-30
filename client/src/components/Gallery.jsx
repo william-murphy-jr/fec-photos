@@ -8,18 +8,15 @@ class Gallery extends React.Component {
     super(props);
     this.state = {
       images: [],
-      highLight: [
-        { value: true }, { value: true },
-        { value: true }, { value: true },
-        { value: true }
-      ],
+      highLight: [],
+      numOfImages: 0,
       showCarousel: false,
       currentImageIndex: 0
     };
 
     // Turn on & off console.log
     this.DEBUG = false;
-    this.DEBUG_2 = false;
+    this.DEBUG_2 = true;
 
     this.hoverOn = this.hoverOn.bind(this);
     this.hoverOff = this.hoverOff.bind(this);
@@ -33,55 +30,59 @@ class Gallery extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      method: "GET",
-      url: "http://localhost:9999/gallery"
+      method: 'GET',
+      url: 'http://localhost:9999/gallery'
     }).done(
       function(data) {
-        if (this.DEBUG_2) {
-          console.log(data);
-        }
-        if (this.DEBUG_2) {
-          console.log("data[0].fileName: ", data[0].fileName);
-        }
+        if (this.DEBUG_2) { console.log(data); }
+        if (this.DEBUG_2) { console.log('data[0].fileName: ', data[0].fileName); }
         // alert('Returned Data Saved: ' + data);
-        this.setState({ images: data });
+        const len = data.length;
+        const hl = [];
+
+        this.setState({numOfImages: len});
+
+        for (let i = 0; i < len; i++) {
+          hl.push({value: true});
+        }
+
+        this.setState({highLight: hl});
+        this.setState({images: data});
       }.bind(this)
     );
   }
 
   hoverOn(e) {
     let targetPos = +e.target.dataset.position;
+    const hl = [];
+    const len = this.state.images.length;
 
-    let hl = [
-      { value: false },
-      { value: false },
-      { value: false },
-      { value: false },
-      { value: false }
-    ];
+    this.state.images.forEach(function() {
+      hl.push({ value: false });
+    });
+
     for (var i = 0; i < 5; i++) {
       if (targetPos === i) {
         hl.splice(i, 1, { value: true });
         this.setState({ highLight: hl });
       }
-    }
+    } 
   }
 
   hoverOff(e) {
-    this.setState({
-      highLight: [
-        { value: true },
-        { value: true },
-        { value: true },
-        { value: true },
-        { value: true }
-      ]
-    });
+    const hl = [];
+    const len = this.state.numOfImages;
+
+    for (let i = 0; i < len; i++) {
+      hl.push({value: true});
+    }
+
+    this.setState({highLight: hl});
   }
 
   handleImageClickShowCarousel(e) {
-    console.log("handleImageClickShowCarousel clicked: ", e.target);
-    console.log("e.target.dataset.position: ", e.target.dataset.position);
+    console.log('handleImageClickShowCarousel clicked: ', e.target);
+    console.log('e.target.dataset.position: ', e.target.dataset.position);
     const currentImageIndex = e.target.dataset.position;
     this.setState({ showCarousel: true });
     this.setState({ currentImageIndex: currentImageIndex });
@@ -104,7 +105,7 @@ class Gallery extends React.Component {
   }
 
   nextSlide(e) {
-    console.log("NextSlide e.target", e.target);
+    console.log('NextSlide e.target', e.target);
     const lastIndex = this.state.images.length - 1;
     const currentImageIndex = this.state.currentImageIndex;
     const shouldResetIndex = currentImageIndex === lastIndex;

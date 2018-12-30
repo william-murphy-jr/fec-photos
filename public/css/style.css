@@ -144,3 +144,7 @@
   vertical-align: bottom;
   position: absolute;    
 }
+
+.pipImage:hover {
+  cursor: pointer;
+}
