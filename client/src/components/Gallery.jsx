@@ -168,7 +168,7 @@ class Gallery extends React.Component {
       let image4 = this.state.images[4].fileName.trim();
 
       return (
-        <div className="container-fluid" style={{ marginLeft: "0px" }}>
+        <div className="container-fluid">
           <Carousel
             showCarousel={this.state.showCarousel}
             hideCarousel={this.state.hideCarousel}
@@ -240,22 +240,22 @@ class Gallery extends React.Component {
       );
     } else {
       return (
-        <div className="container-fluid" style={{ marginLeft: "0px" }}>
+        <div className="container-fluid">
           <div className="row">
-            <GalleryHalf image={"http://lorempixel.com/1200/650/transport"} />
+            <GalleryHalf image={'images/Loading_icon.gif'} />
             <div className="col-6">
               <div className="row">
                 <GalleryQuarter
-                  image={"http://lorempixel.com/1200/650/transport"}
+                  image={'images/Loading_icon.gif'}
                 />
-                <GalleryQuarter image={"http://lorempixel.com/1200/650/city"} />
+                <GalleryQuarter image={'images/Loading_icon.gif'} />
               </div>
               <div className="row">
                 <GalleryQuarter
-                  image={"http://lorempixel.com/1200/650/fashion"}
+                  image={'images/Loading_icon.gif'}
                 />
                 <GalleryQuarter
-                  image={"http://lorempixel.com/1200/650/people"}
+                  image={'images/Loading_icon.gif'}
                 />
               </div>
             </div>
