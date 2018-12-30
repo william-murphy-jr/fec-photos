@@ -2,7 +2,7 @@ import React from 'react';
 import Squarepip from './Squarepip.jsx';
 
 const Indicator = function(props) {
-  console.log("props.highLight: ", props.highLight);
+  // console.log("props.highLight: ", props.highLight);
   return (
     <div className="indicator">
       <div className="wrapper">
