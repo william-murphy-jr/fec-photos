@@ -27,8 +27,6 @@ class Gallery extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
     this.handleClickedSquare = this.handleClickedSquare.bind(this);
-    this.hoverOnSlide = this.hoverOnSlide.bind(this);
-    this.hoverOffSlide = this.hoverOffSlide.bind(this);
   }
 
   componentDidMount() {
@@ -39,7 +37,6 @@ class Gallery extends React.Component {
       function(data) {
         if (this.DEBUG_2) { console.log(data); }
         if (this.DEBUG_2) { console.log('data[0].fileName: ', data[0].fileName); }
-        // alert('Returned Data Saved: ' + data);
         const len = data.length;
         const hl = [];
 
@@ -49,8 +46,7 @@ class Gallery extends React.Component {
           hl.push({value: true});
         }
 
-        this.setState({highLight: hl});
-        this.setState({images: data});
+        this.setState({ highLight: hl, images: data});
       }.bind(this)
     );
   }
@@ -89,9 +85,11 @@ class Gallery extends React.Component {
 
     hl = highLightCurrentSelection(currentImageIndex, len);
 
-    this.setState({ currentImageIndex: currentImageIndex });
-    this.setState({ highLight: hl });
-    this.setState({ showCarousel: true });
+    this.setState({
+      currentImageIndex: currentImageIndex,
+      highLight: hl,
+      showCarousel: true
+    });
   }
 
   handleImageClickHideCarousel(e) {
@@ -131,7 +129,6 @@ class Gallery extends React.Component {
   }
 
   handleClickedSquare(e) {
-    console.log('Handle Clicked Square');
     console.log('e.target.dataset.position: ', e.target.dataset.position);
     const clickedImageIndex = +e.target.dataset.position;
     const len = this.state.numOfImages;
@@ -139,16 +136,10 @@ class Gallery extends React.Component {
 
     hl = highLightCurrentSelection(clickedImageIndex, len);
     
-    this.setState({ currentImageIndex: clickedImageIndex });
-    this.setState({ highLight: hl });
-  }
-  
-  hoverOnSlide(e) {
-    console.log('hoverOnSlide');
-  } // hoverOverSlide - Carousel
-
-  hoverOffSlide(e) {
-    console.log('hoverOffSlide');
+    this.setState({
+      currentImageIndex: clickedImageIndex,
+      highLight: hl
+    });
   }
   
   render() {
