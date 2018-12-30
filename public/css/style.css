@@ -122,16 +122,25 @@
 }
 
 .squarepip {
-  /* position: absolute; */
+  position: relative;
   z-index: 3;
   top: 40%;
-  left: 50%;
+  left: 0%;
   width: 75px;
-  height: 30px;
+  height: 40px;
   display: inline-block;
   margin: 0 8px;
 }
 .wrapper {
-  width: 500px;
+  width: 100%;
   overflow: hidden;
+}
+
+.pipImage {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  position: absolute;    
 }

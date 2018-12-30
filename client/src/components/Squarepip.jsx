@@ -1,10 +1,14 @@
 import React from 'react';
 
 const Squarepip = function(props) {
-  // console.log('props.index: ', props.index);
   return (
-    <div className='squarepip'>
-      <img src={props.image} style={{ width: '65px', height: '25px', margin: '5px'}}/>
+    <div className='squarepip' >
+      <img className="pipImage"
+        data-position={props.index}
+        src={props.image}
+        style={{ width: '65px', height: '40px', margin: '5px'}}
+        onClick={props.handleClickedSquare}
+      />
     </div>
   );
 };

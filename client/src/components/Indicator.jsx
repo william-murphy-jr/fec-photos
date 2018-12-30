@@ -6,7 +6,12 @@ const Indicator = function(props) {
     <div className="indicator">
       <div className="wrapper">
         {props.images.map(function (image, index) {
-          return <Squarepip image={image.fileName} key={index} index={index} />;
+          return <Squarepip
+            image={image.fileName}
+            key={index}
+            index={index}
+            handleClickedSquare={props.handleClickedSquare}
+          />;
         })}
       </div>
     </div>

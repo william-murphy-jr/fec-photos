@@ -8,11 +8,13 @@ class Gallery extends React.Component {
     super(props);
     this.state = {
       images: [],
-      highLight: [{ 'value': true },
-        { 'value': true }, { 'value': true },
-        { 'value': true }, { 'value': true }],
+      highLight: [
+        { value: true }, { value: true },
+        { value: true }, { value: true },
+        { value: true }
+      ],
       showCarousel: false,
-      currentImageIndex: 0,
+      currentImageIndex: 0
     };
 
     // Turn on & off console.log
@@ -26,61 +28,79 @@ class Gallery extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
+    this.handleClickedSquare = this.handleClickedSquare.bind(this);
   }
 
   componentDidMount() {
     $.ajax({
-      method: 'GET',
-      url: 'http://localhost:9999/gallery'
-    }).done(function(data) {
-      if (this.DEBUG_2) { console.log(data); } 
-      if (this.DEBUG_2) { console.log('data[0].fileName: ', data[0].fileName); }
-      // alert('Returned Data Saved: ' + data);
-      this.setState({ images: data });
-    }.bind(this));
+      method: "GET",
+      url: "http://localhost:9999/gallery"
+    }).done(
+      function(data) {
+        if (this.DEBUG_2) {
+          console.log(data);
+        }
+        if (this.DEBUG_2) {
+          console.log("data[0].fileName: ", data[0].fileName);
+        }
+        // alert('Returned Data Saved: ' + data);
+        this.setState({ images: data });
+      }.bind(this)
+    );
   }
 
   hoverOn(e) {
     let targetPos = +e.target.dataset.position;
 
-    let hl = [{ 'value': false }, { 'value': false }, { 'value': false }, { 'value': false }, { 'value': false }];
+    let hl = [
+      { value: false },
+      { value: false },
+      { value: false },
+      { value: false },
+      { value: false }
+    ];
     for (var i = 0; i < 5; i++) {
       if (targetPos === i) {
-        hl.splice(i, 1, {'value': true});
-        this.setState({highLight: hl});
-      } 
-    } 
+        hl.splice(i, 1, { value: true });
+        this.setState({ highLight: hl });
+      }
+    }
   }
-  
+
   hoverOff(e) {
-    this.setState({ highLight:
-      [{ 'value': true }, { 'value': true },
-        { 'value': true }, { 'value': true }, { 'value': true }]
+    this.setState({
+      highLight: [
+        { value: true },
+        { value: true },
+        { value: true },
+        { value: true },
+        { value: true }
+      ]
     });
   }
 
   handleImageClickShowCarousel(e) {
-    console.log('Image clicked: ', e.target);
-    this.setState({showCarousel: true});
+    console.log("Image clicked: ", e.target);
+    this.setState({ showCarousel: true });
   }
-  
+
   handleImageClickHideCarousel(e) {
-    console.log('Carousel close X clicked: ', e.target);
-    this.setState({showCarousel: false});
+    console.log("Carousel close X clicked: ", e.target);
+    this.setState({ showCarousel: false });
   }
 
   previousSlide(e) {
-    console.log('PreviousSlide e.target', e.target);
+    console.log("PreviousSlide e.target", e.target);
     const lastIndex = this.state.images.length - 1;
     const currentImageIndex = this.state.currentImageIndex;
     const shouldResetIndex = currentImageIndex === 0;
     const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
 
-    this.setState({currentImageIndex: index});
+    this.setState({ currentImageIndex: index });
   }
 
   nextSlide(e) {
-    console.log('NextSlide e.target', e.target);
+    console.log("NextSlide e.target", e.target);
     const lastIndex = this.state.images.length - 1;
     const currentImageIndex = this.state.currentImageIndex;
     const shouldResetIndex = currentImageIndex === lastIndex;
@@ -91,18 +111,26 @@ class Gallery extends React.Component {
     });
   }
 
-
+  handleClickedSquare(e) {
+    console.log('Handle Clicked Square e.target.dataset.position: ', e.target.dataset.position);
+  }
 
   render() {
-
     if (this.state.images.length) {
+      if (this.DEBUG) {console.log('this.state.images:', this.state.images);
+      }
+      if (this.DEBUG) {console.log('this.state.images:',
+        this.state.images[this.state.currentImageIndex]);
+      }
+      if (this.DEBUG) {console.log('this.state.currentImageIndex :',
+        this.state.currentImageIndex);
+      }
+      if (this.DEBUG) {
+        console.log(
+          'this.state.images[this.state.currentImageIndex].fileName:',
+          this.state.images[this.state.currentImageIndex].fileName);
+      }
 
-
-      if (this.DEBUG) { console.log('this.state.images:', this.state.images); }
-      if (this.DEBUG) { console.log('this.state.images:', this.state.images[this.state.currentImageIndex]); }
-      if (this.DEBUG) { console.log('this.state.currentImageIndex :', this.state.currentImageIndex); }
-      if (this.DEBUG) { console.log('this.state.images[this.state.currentImageIndex].fileName:', this.state.images[this.state.currentImageIndex].fileName); }
-      
       let image0 = this.state.images[0].fileName.trim();
       let image1 = this.state.images[1].fileName.trim();
       let image2 = this.state.images[2].fileName.trim();
@@ -110,7 +138,7 @@ class Gallery extends React.Component {
       let image4 = this.state.images[4].fileName.trim();
 
       return (
-        <div className="container-fluid" style={{ marginLeft: '0px' }}>
+        <div className="container-fluid" style={{ marginLeft: "0px" }}>
           <Carousel
             showCarousel={this.state.showCarousel}
             hideCarousel={this.state.hideCarousel}
@@ -119,6 +147,7 @@ class Gallery extends React.Component {
             previousSlide={this.previousSlide}
             images={this.state.images}
             currentImageIndex={this.state.currentImageIndex}
+            handleClickedSquare={this.handleClickedSquare}
           />
           <div className="row">
             <GalleryHalf
@@ -137,7 +166,9 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[1].value}
-                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
+                  handleImageClickShowCarousel={
+                    this.handleImageClickShowCarousel
+                  }
                 />
                 <GalleryQuarter
                   image={image2}
@@ -145,7 +176,9 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[2].value}
-                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
+                  handleImageClickShowCarousel={
+                    this.handleImageClickShowCarousel
+                  }
                 />
               </div>
               <div className="row">
@@ -155,7 +188,9 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[3].value}
-                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
+                  handleImageClickShowCarousel={
+                    this.handleImageClickShowCarousel
+                  }
                 />
                 <GalleryQuarter
                   image={image4}
@@ -163,7 +198,9 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[4].value}
-                  handleImageClickShowCarousel={this.handleImageClickShowCarousel}
+                  handleImageClickShowCarousel={
+                    this.handleImageClickShowCarousel
+                  }
                 />
               </div>
             </div>
@@ -172,17 +209,23 @@ class Gallery extends React.Component {
       );
     } else {
       return (
-        <div className="container-fluid" style={{ marginLeft: '0px' }}>
+        <div className="container-fluid" style={{ marginLeft: "0px" }}>
           <div className="row">
-            <GalleryHalf image={'http://lorempixel.com/1200/650/transport'} />            
+            <GalleryHalf image={"http://lorempixel.com/1200/650/transport"} />
             <div className="col-6">
               <div className="row">
-                <GalleryQuarter image={'http://lorempixel.com/1200/650/transport'} />
-                <GalleryQuarter image={'http://lorempixel.com/1200/650/city'} />
+                <GalleryQuarter
+                  image={"http://lorempixel.com/1200/650/transport"}
+                />
+                <GalleryQuarter image={"http://lorempixel.com/1200/650/city"} />
               </div>
               <div className="row">
-                <GalleryQuarter image={'http://lorempixel.com/1200/650/fashion'} />
-                <GalleryQuarter image={'http://lorempixel.com/1200/650/people'} />
+                <GalleryQuarter
+                  image={"http://lorempixel.com/1200/650/fashion"}
+                />
+                <GalleryQuarter
+                  image={"http://lorempixel.com/1200/650/people"}
+                />
               </div>
             </div>
           </div>
