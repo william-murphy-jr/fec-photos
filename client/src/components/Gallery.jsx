@@ -3,6 +3,7 @@ import GalleryHalf from './GalleryHalf.jsx';
 import GalleryQuarter from './GalleryQuarter.jsx';
 import Carousel from '../components/Carousel.jsx';
 import highLightCurrentSelection from './Utility.jsx';
+import InitialGallery from './InitialGallery.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -241,25 +242,7 @@ class Gallery extends React.Component {
     } else {
       return (
         <div className="container-fluid">
-          <div className="row">
-            <GalleryHalf image={'images/Loading_icon.gif'} />
-            <div className="col-6">
-              <div className="row">
-                <GalleryQuarter
-                  image={'images/Loading_icon.gif'}
-                />
-                <GalleryQuarter image={'images/Loading_icon.gif'} />
-              </div>
-              <div className="row">
-                <GalleryQuarter
-                  image={'images/Loading_icon.gif'}
-                />
-                <GalleryQuarter
-                  image={'images/Loading_icon.gif'}
-                />
-              </div>
-            </div>
-          </div>
+          <InitialGallery />
         </div>
       );
     }
