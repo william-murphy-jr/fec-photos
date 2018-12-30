@@ -74,20 +74,34 @@ class Gallery extends React.Component {
     for (let i = 0; i < len; i++) {
       hl.push({value: true});
     }
-
-    this.setState({highLight: hl});
+    if (!this.state.showCarousel) {
+      this.setState({highLight: hl});
+    }
   }
 
   handleImageClickShowCarousel(e) {
     console.log('handleImageClickShowCarousel clicked: ', e.target);
     console.log('e.target.dataset.position: ', e.target.dataset.position);
-    const currentImageIndex = e.target.dataset.position;
-    this.setState({ showCarousel: true });
+    const currentImageIndex = +e.target.dataset.position;
+    const hl = [];
+    const len = this.state.numOfImages;
+
+    for (var i = 0; i < len; i++) {
+      if (currentImageIndex === i) {
+        hl.push({ value: true });
+      }
+      hl.push({ value: false });
+    } 
+
     this.setState({ currentImageIndex: currentImageIndex });
+    this.setState({ highLight: hl });
+    this.setState({ showCarousel: true });
+    // console.log('**** hl ****: ', hl);
+    // console.log('this.state.highLight: ', this.state.highLight);
   }
 
   handleImageClickHideCarousel(e) {
-    console.log('Carousel close X clicked: ', e.target);
+    // console.log('Carousel close X clicked: ', e.target);
     this.setState({ showCarousel: false });
   }
 
@@ -116,14 +130,19 @@ class Gallery extends React.Component {
   handleClickedSquare(e) {
     console.log('Handle Clicked Square');
     console.log('e.target.dataset.position: ', e.target.dataset.position);
-    const currentImageIndex = e.target.dataset.position;
-    this.setState({ currentImageIndex: currentImageIndex });
-    let hl = [];
-    hl = this.state.highLight.slice();
-    hl[currentImageIndex] = {value: true};
+    const clickedImageIndex = +e.target.dataset.position;
+    const len = this.state.numOfImages;
+    const hl = [];
+    
+    for (var i = 0; i < len; i++) {
+      if (clickedImageIndex === i) {
+        hl.push({ value: true });
+      }
+      hl.push({ value: false });
+    } 
+    
+    this.setState({ currentImageIndex: clickedImageIndex });
     this.setState({ highLight: hl });
-    // debugger;
-
   }
   
   hoverOnSlide(e) {
@@ -184,7 +203,7 @@ class Gallery extends React.Component {
       let image2 = this.state.images[2].fileName.trim();
       let image3 = this.state.images[3].fileName.trim();
       let image4 = this.state.images[4].fileName.trim();
-
+      console.log('#### this.state.highLight: ', this.state.highLight);
       return (
         <div className="container-fluid" style={{ marginLeft: "0px" }}>
           <Carousel
