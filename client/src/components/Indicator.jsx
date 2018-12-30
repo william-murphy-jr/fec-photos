@@ -13,8 +13,6 @@ const Indicator = function(props) {
             index={index}
             highLight={props.highLight[index].value}
             handleClickedSquare={props.handleClickedSquare}
-            // hoverOnSlide={props.hoverOnSlide}
-            // hoverOffSlide={props.hoverOffSlide}
           />;
         })}
       </div>

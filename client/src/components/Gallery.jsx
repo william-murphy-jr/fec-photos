@@ -188,8 +188,6 @@ class Gallery extends React.Component {
             currentImageIndex={this.state.currentImageIndex}
             handleClickedSquare={this.handleClickedSquare}
             highLight={this.state.highLight}
-            hoverOnSlide={this.hoverOnSlide}
-            hoverOffSlide={this.hoverOffSlide}
           />
           <div className="row">
             <GalleryHalf

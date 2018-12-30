@@ -8,8 +8,6 @@ const Squarepip = function(props) {
         src={props.image}
         style={{width: '65px', height: '40px', margin: '5px'}}
         onClick={props.handleClickedSquare}
-        // onMouseOver={props.hoverOnSlide}
-        // onMouseOut={props.hoverOffSlide}
       />
     </div>
   );
