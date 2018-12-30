@@ -6,7 +6,6 @@ const GalleryQuarter = function(props) {
   return (
     <div className={'col-6 quarter' + ' pos' + props.position}>
       <img
-        className="img-fluid"
         className={props.highLight ? 'img-fluid' : 'img-fluid overlay-img'}
         data-position={props.position}
         onMouseOver={props.hoverOn}

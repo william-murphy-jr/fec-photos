@@ -26,6 +26,8 @@ class Gallery extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
     this.handleClickedSquare = this.handleClickedSquare.bind(this);
+    this.hoverOnSlide = this.hoverOnSlide.bind(this);
+    this.hoverOffSlide = this.hoverOffSlide.bind(this);
   }
 
   componentDidMount() {
@@ -55,20 +57,16 @@ class Gallery extends React.Component {
   hoverOn(e) {
     let targetPos = +e.target.dataset.position;
     const hl = [];
-    const len = this.state.images.length;
+    const len = this.state.numOfImages;
 
-    this.state.images.forEach(function() {
-      hl.push({ value: false });
-    });
-
-    for (var i = 0; i < 5; i++) {
+    for (let i = 0; i < len; i++) {
       if (targetPos === i) {
-        hl.splice(i, 1, { value: true });
-        this.setState({ highLight: hl });
+        hl.push({ value: true });
       }
-    } 
+      hl.push({value: false});
+      this.setState({ highLight: hl });
+    }
   }
-
   hoverOff(e) {
     const hl = [];
     const len = this.state.numOfImages;
@@ -86,7 +84,6 @@ class Gallery extends React.Component {
     const currentImageIndex = e.target.dataset.position;
     this.setState({ showCarousel: true });
     this.setState({ currentImageIndex: currentImageIndex });
-
   }
 
   handleImageClickHideCarousel(e) {
@@ -96,8 +93,8 @@ class Gallery extends React.Component {
 
   previousSlide(e) {
     console.log('PreviousSlide e.target', e.target);
-    const lastIndex = this.state.images.length - 1;
-    const currentImageIndex = this.state.currentImageIndex;
+    const lastIndex = this.state.numOfImages - 1;
+    const currentImageIndex = +this.state.currentImageIndex;
     const shouldResetIndex = currentImageIndex === 0;
     const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
 
@@ -106,8 +103,8 @@ class Gallery extends React.Component {
 
   nextSlide(e) {
     console.log('NextSlide e.target', e.target);
-    const lastIndex = this.state.images.length - 1;
-    const currentImageIndex = this.state.currentImageIndex;
+    const lastIndex = this.state.numOfImages.length - 1;
+    const currentImageIndex = +this.state.currentImageIndex;
     const shouldResetIndex = currentImageIndex === lastIndex;
     const index = shouldResetIndex ? 0 : currentImageIndex + 1;
 
@@ -121,6 +118,46 @@ class Gallery extends React.Component {
     console.log('e.target.dataset.position: ', e.target.dataset.position);
     const currentImageIndex = e.target.dataset.position;
     this.setState({ currentImageIndex: currentImageIndex });
+    let hl = [];
+    hl = this.state.highLight.slice();
+    hl[currentImageIndex] = {value: true};
+    this.setState({ highLight: hl });
+    // debugger;
+
+  }
+  
+  hoverOnSlide(e) {
+    // debugger;
+    console.log('hoverOnSlide');
+    // let targetPos = +e.target.dataset.position;
+    // let currentImageIndex = this.state.currentImageIndex;
+    // const hl = [];
+    // const len = this.state.numOfImages;
+
+    // this.state.images.forEach(function() {
+    //   hl.push({ value: false });
+    // });
+
+    // for (var i = 0; i < len; i++) {
+    //   if (targetPos === i || currentImageIndex === i) {
+    //     hl.splice(i, 1, { value: true });
+    //     this.setState({ highLight: hl });
+    //   }
+    // } 
+  } // hoverOverSlide - Carousel
+
+  hoverOffSlide(e) {
+    console.log('hoverOffSlide');
+    // const hl = [];
+    // const len = this.state.numOfImages;
+
+    // for (let i = 0; i < len; i++) {
+    //   hl.push({value: false});
+    // }
+
+    // hl[this.state.currentImageIndex] = true;
+
+    // this.setState({highLight: hl});
   }
   
   render() {
@@ -159,6 +196,9 @@ class Gallery extends React.Component {
             images={this.state.images}
             currentImageIndex={this.state.currentImageIndex}
             handleClickedSquare={this.handleClickedSquare}
+            highLight={this.state.highLight}
+            hoverOnSlide={this.hoverOnSlide}
+            hoverOffSlide={this.hoverOffSlide}
           />
           <div className="row">
             <GalleryHalf

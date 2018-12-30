@@ -10,7 +10,10 @@ const Indicator = function(props) {
             image={image.fileName}
             key={index}
             index={index}
+            highLight={props.highLight[index].value}
             handleClickedSquare={props.handleClickedSquare}
+            // hoverOnSlide={props.hoverOnSlide}
+            // hoverOffSlide={props.hoverOffSlide}
           />;
         })}
       </div>

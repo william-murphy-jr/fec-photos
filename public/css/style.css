@@ -18,7 +18,7 @@
   background-color: #484848;  /* charcoal */
 }
 
-.overlay-img{
+.overlay-img {
   opacity: 0.65;
 }
 
@@ -50,7 +50,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(72, 72, 72, 1.0); /* charcoal background with opacity */
+  background-color: #484848; /* charcoal background with opacity */
   z-index: 2;   /* Specify a stack order in case you're using a different order for other elements */
 }
 
@@ -123,6 +123,7 @@
 
 .squarepip {
   position: relative;
+  background-color: #484848;
   z-index: 3;
   top: 40%;
   left: 0%;
@@ -145,6 +146,11 @@
   position: absolute;    
 }
 
+.overlay-img2 {
+  opacity: 0.50;
+}
+
 .pipImage:hover {
+  opacity: 1;
   cursor: pointer;
 }

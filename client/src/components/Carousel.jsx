@@ -19,6 +19,9 @@ const Carousel = function (props) {
       </div>
       <Indicator images={props.images}
         handleClickedSquare={props.handleClickedSquare}
+        hoverOnSlide={props.hoverOnSlide}
+        hoverOffSlide={props.hoverOffSlide}
+        highLight={props.highLight}
       />
       <Arrow
         direction="right"
