@@ -80,17 +80,21 @@ class Gallery extends React.Component {
   }
 
   handleImageClickShowCarousel(e) {
-    console.log("Image clicked: ", e.target);
+    console.log("handleImageClickShowCarousel clicked: ", e.target);
+    console.log("e.target.dataset.position: ", e.target.dataset.position);
+    const currentImageIndex = e.target.dataset.position;
     this.setState({ showCarousel: true });
+    this.setState({ currentImageIndex: currentImageIndex });
+
   }
 
   handleImageClickHideCarousel(e) {
-    console.log("Carousel close X clicked: ", e.target);
+    console.log('Carousel close X clicked: ', e.target);
     this.setState({ showCarousel: false });
   }
 
   previousSlide(e) {
-    console.log("PreviousSlide e.target", e.target);
+    console.log('PreviousSlide e.target', e.target);
     const lastIndex = this.state.images.length - 1;
     const currentImageIndex = this.state.currentImageIndex;
     const shouldResetIndex = currentImageIndex === 0;
@@ -112,18 +116,24 @@ class Gallery extends React.Component {
   }
 
   handleClickedSquare(e) {
-    console.log('Handle Clicked Square e.target.dataset.position: ', e.target.dataset.position);
+    console.log('Handle Clicked Square');
+    console.log('e.target.dataset.position: ', e.target.dataset.position);
+    const currentImageIndex = e.target.dataset.position;
+    this.setState({ currentImageIndex: currentImageIndex });
   }
-
+  
   render() {
     if (this.state.images.length) {
-      if (this.DEBUG) {console.log('this.state.images:', this.state.images);
+      if (this.DEBUG) { 
+        console.log('this.state.images:', this.state.images);
       }
-      if (this.DEBUG) {console.log('this.state.images:',
-        this.state.images[this.state.currentImageIndex]);
+      if (this.DEBUG) {
+        console.log('this.state.images:',
+          this.state.images[this.state.currentImageIndex]);
       }
-      if (this.DEBUG) {console.log('this.state.currentImageIndex :',
-        this.state.currentImageIndex);
+      if (this.DEBUG) {
+        console.log('this.state.currentImageIndex :',
+          this.state.currentImageIndex);
       }
       if (this.DEBUG) {
         console.log(
@@ -134,7 +144,7 @@ class Gallery extends React.Component {
       let image0 = this.state.images[0].fileName.trim();
       let image1 = this.state.images[1].fileName.trim();
       let image2 = this.state.images[2].fileName.trim();
-      let image3 = this.state.images[7].fileName.trim();
+      let image3 = this.state.images[3].fileName.trim();
       let image4 = this.state.images[4].fileName.trim();
 
       return (
