@@ -32,7 +32,7 @@ const seedDbUrls = function (numberOfRecords, callback) {
 // sequelize.sync({force: true})
 // If force is true, each Model will run DROP TABLE IF EXISTS, 
 // before it tries to create its own table
-sequelize.sync()
+sequelize.sync({force: true})
   .then(function () {
     seedDbUrls(null, () => {});
     console.log('sequelize.sync() it Baby!!!');

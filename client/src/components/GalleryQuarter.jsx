@@ -10,7 +10,7 @@ const GalleryQuarter = function(props) {
       onMouseOut={props.hoverOff}
       src={props.image}
       onClick={props.handleImageClickShowCarousel} />
-    </div>;
+  </div>;
 };
 
 export default GalleryQuarter;
