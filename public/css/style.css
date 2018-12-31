@@ -9,7 +9,7 @@
 
 .half {
   padding-left: 0 !important;
-  padding-right: 0 !important
+  padding-right: 0 !important;
 }
 
 .half, .quarter {
@@ -24,6 +24,10 @@
 
 .non-overlay-img {
   opacity: 1;
+}
+
+.img-gallery-qtr {
+  min-height: 100%;
 }
 
 .img-fluid:hover {
