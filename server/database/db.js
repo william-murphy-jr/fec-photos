@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const seedDb = require('../database/seedDb');
+// const seedDb = require('../database/seedDb');  // moved
 
 const sequelize = new Sequelize('gallery', 'student', 'student', {
   // host: 'localhost',
@@ -26,15 +26,9 @@ const DISPLAY_IMAGE = sequelize.define('display_image', {
 
 });
 
-const log = console.log('seedDb just seeded the database gallery with records!!!');
+console.log('db.js just ran!');
 
-// sequelize.sync({ "force": true }) will recreate the table
-// EVERY TIME the database is called.
-sequelize.sync()
-  .then(function() {
-    seedDb.seedDb(null, log);
-    console.log('sequelize.sync() it Baby!!!');
-  });
-
+// We could create the database here
 
 exports.DISPLAY_IMAGE = DISPLAY_IMAGE;
+exports.sequelize = sequelize;

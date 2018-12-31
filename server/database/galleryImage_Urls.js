@@ -1,12 +1,8 @@
-// const db = require('../database/db.js');
-// console.log('db: ', db);
-
 const front = [
   'https://s3-us-west-1.amazonaws.com/image-store-100/front-01-house-2469067_960_720.jpg',
   'https://s3-us-west-1.amazonaws.com/image-store-100/front-02-sea-01_i21161920x0_7_36.jpg',
   'https://s3-us-west-1.amazonaws.com/image-store-100/front-03-Buckingham-Exterior_1200x650.jpg'
 ];
-
 
 const interior = [
   'https://s3-us-west-1.amazonaws.com/image-store-100/Interior-001-pexels-photo-276724.jpeg',

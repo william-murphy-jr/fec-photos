@@ -9,7 +9,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/server.js",
-    "seed": "node server/database/seedDb.js"
+    "seed": "node server/database/seedDb.js",
+    "seedUrls": "node server/database/seedDbUrls.js"
   },
   "dependencies": {
     "express": "^4.16.4",
