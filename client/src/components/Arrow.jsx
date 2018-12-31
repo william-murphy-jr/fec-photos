@@ -6,6 +6,7 @@ const Arrow = function(props) {
       className={`slide-arrow ${props.direction}`}
       onClick={props.clickFunction}>
       <i className={props.direction === 'right' ? 'fa fa-angle-right' : 'fa fa-angle-left'}></i>
+      {/* <i className={props.direction === 'right' ? 'fa fa-angle-right' : 'fa fa-angle-left'}></i> */}
     </div>
   );
 };
