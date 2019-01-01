@@ -14,7 +14,14 @@ const interior = [
   'https://s3-us-west-1.amazonaws.com/image-store-100/interior-002-Somerton+1200x650.jpg',
   'https://s3-us-west-1.amazonaws.com/image-store-100/interior-003-Shoreline-9-1200x650.jpg',
   'https://s3-us-west-1.amazonaws.com/image-store-100/interior-004-Elysium-7-1200x650.jpg',
-  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-005-Second-5-1200x650.jpg'
+  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-005-Second-5-1200x650.jpg',
+  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-006-Montrose-3-1200x650.jpg',
+  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-007-Tara-Valley4-1200x650.jpg',
+  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-008-Tara-Valley3-1200x650.jpg',
+  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-009--Province-5-1200x650.jpg',
+  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-010-interior-define-social.jpg',
+  'https://s3-us-west-1.amazonaws.com/image-store-100/interior-011-Province-12-1200x650.jpg'
+
 ];
 
 exports.front = front;
