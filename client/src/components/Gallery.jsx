@@ -13,6 +13,7 @@ class Gallery extends React.Component {
       highLight: [],
       numOfImages: 0,
       showCarousel: false,
+      showPhotoList: true,
       currentImageIndex: 0
     };
 
@@ -28,6 +29,8 @@ class Gallery extends React.Component {
     this.nextSlide = this.nextSlide.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
     this.handleClickedSquare = this.handleClickedSquare.bind(this);
+    this.handleShowPhotoList = this.handleShowPhotoList.bind(this);
+    this.handleHidePhotoList = this.handleHidePhotoList.bind(this);
   }
 
   componentDidMount() {
@@ -142,6 +145,16 @@ class Gallery extends React.Component {
       highLight: hl
     });
   }
+
+  handleShowPhotoList(e) {
+    console.log('handle show photo list');
+    this.setState({showPhotoList: true});
+  }
+
+  handleHidePhotoList(e) {
+    console.log('handle hide photo list');
+    this.setState({showPhotoList: false});
+  }
   
   render() {
     if (this.state.images.length) {
@@ -180,6 +193,9 @@ class Gallery extends React.Component {
             currentImageIndex={this.state.currentImageIndex}
             handleClickedSquare={this.handleClickedSquare}
             highLight={this.state.highLight}
+            handleShowPhotoList={this.handleShowPhotoList}
+            handleHidePhotoList={this.handleHidePhotoList}
+            showPhotoList={this.state.showPhotoList}
           />
           <div className="row">
             <GalleryHalf

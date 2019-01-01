@@ -20,6 +20,9 @@ const Carousel = function (props) {
       <Indicator images={props.images}
         handleClickedSquare={props.handleClickedSquare}
         highLight={props.highLight}
+        handleShowPhotoList={props.handleShowPhotoList}
+        handleHidePhotoList={props.handleHidePhotoList}
+        showPhotoList={props.showPhotoList}
       />
       <Arrow
         direction="right"
