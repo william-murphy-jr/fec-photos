@@ -22,6 +22,8 @@ const GalleryQuarter = function(props) {
         <ViewPhotosBtn 
           onClick={props.handleImageClickShowCarousel}
           moveViewPhotosBtn={props.moveViewPhotosBtn}
+          position={props.position}
+          handleImageClickShowCarousel={props.handleImageClickShowCarousel}
         />
         <img className={props.highLight ? 'img-fluid img-gallery-qtr' : 'img-fluid img-gallery-qtr overlay-img'} data-position={props.position} onMouseOver={props.hoverOn} onMouseOut={props.hoverOff} src={props.image} onClick={props.handleImageClickShowCarousel} />
       </div>
