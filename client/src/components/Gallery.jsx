@@ -44,15 +44,15 @@ class Gallery extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      method: "GET",
-      url: "http://localhost:9999/gallery"
+      method: 'GET',
+      url: 'http://localhost:9999/gallery'
     }).done(
       function(data) {
         if (this.DEBUG_2) {
           console.log(data);
         }
         if (this.DEBUG_2) {
-          console.log("data[0].fileName: ", data[0].fileName);
+          console.log('data[0].fileName: ', data[0].fileName);
         }
         const len = data.length;
         const hl = [];

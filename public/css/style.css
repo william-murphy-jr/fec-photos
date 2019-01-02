@@ -120,9 +120,13 @@
   top: 0%;
   left: 0%;
   width: 75px;
-  height: 40px;
+  height: 50px;
   display: inline-block;
-  margin: 0 8px;
+  margin: 0 4px 0 0;
+}
+
+.squarepip:last-of-type {
+  margin: 0;
 }
 
 .wrapper {
@@ -131,8 +135,12 @@
   overflow: hidden;
 }
 
+.outside-wrapper {
+  width: 100%;
+}
+
 .wrapper_1 {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   font-size: 14px;
