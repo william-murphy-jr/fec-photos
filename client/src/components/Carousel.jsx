@@ -18,6 +18,8 @@ const Carousel = function (props) {
         />
       </div>
       <Indicator images={props.images}
+        currentImageIndex={props.currentImageIndex}
+        numOfImages={props.numOfImages}
         handleClickedSquare={props.handleClickedSquare}
         highLight={props.highLight}
         handleShowPhotoList={props.handleShowPhotoList}

@@ -6,7 +6,8 @@ const Indicator = function(props) {
   return <div className="indicator">
     <div className={props.showPhotoList ? 'wrapper_1 slide-up' : 'wrapper_1 slide-down'}>
       <div className="wrapper_2_left">
-        <span>3</span><span>/</span><span>11</span><br />
+        <span>{props.currentImageIndex}</span><span>/</span><span>{props.numOfImages}: </span>
+        <span>Great San Francisco Location</span><br />
         <span style={{opacity:'0.5'}}><em>Verified Photo</em></span><span></span>
       </div>
 

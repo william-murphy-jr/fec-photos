@@ -199,6 +199,7 @@ class Gallery extends React.Component {
             previousSlide={this.previousSlide}
             images={this.state.images}
             currentImageIndex={this.state.currentImageIndex}
+            numOfImages={this.state.numOfImages}
             handleClickedSquare={this.handleClickedSquare}
             highLight={this.state.highLight}
             handleShowPhotoList={this.handleShowPhotoList}
