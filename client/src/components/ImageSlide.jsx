@@ -13,7 +13,6 @@ const ImageSlide = (props) => {
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   };
-  // console.log('props.url: ', props.url);
 
   return (
     <div className="image-slide" style={styles} >

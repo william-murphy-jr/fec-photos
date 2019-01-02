@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Share = function(props) {
-  console.log('props.showShare: ', props.showShare);
   return (
     <div className={props.showShare ? 'share-overlay show-share-overlay' : 'share-overlay hide-share-overlay'}>
       <div className={props.showShare ? ' share show-share' : 'share hide-share'}>

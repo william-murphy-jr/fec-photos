@@ -154,7 +154,7 @@ class Gallery extends React.Component {
   }
 
   handleClickedSquare(e) {
-    console.log("e.target.dataset.position: ", e.target.dataset.position);
+    console.log('e.target.dataset.position: ', e.target.dataset.position);
     const clickedImageIndex = +e.target.dataset.position;
     const len = this.state.numOfImages;
     let hl = [];
@@ -168,48 +168,73 @@ class Gallery extends React.Component {
   }
 
   handleShowPhotoList(e) {
-    console.log("handle show photo list");
     this.setState({ showPhotoList: true });
   }
 
   handleHidePhotoList(e) {
-    console.log("handle hide photo list");
     this.setState({ showPhotoList: false });
   }
 
   handleClickedShare(e) {
-    console.log("Clicked Share Button");
     this.setState({ showShare: true });
   }
 
   handleCloseShare(e) {
-    console.log("Clicked Share Button");
     this.setState({ showShare: false });
   }
 
+  debug(msg) {
+    console.log(msg);
+
+    if (this.DEBUG) {
+      console.log('this.state.images:', this.state.images);
+    }
+    if (this.DEBUG) {
+      console.log(
+        'this.state.images:',
+        this.state.images[this.state.currentImageIndex]
+      );
+    }
+    if (this.DEBUG) {
+      console.log(
+        'this.state.currentImageIndex :',
+        this.state.currentImageIndex
+      );
+    }
+    if (this.DEBUG) {
+      console.log(
+        'this.state.images[this.state.currentImageIndex].fileName:',
+        this.state.images[this.state.currentImageIndex].fileName
+      );
+    }
+
+  } // debug
+
   render() {
     if (this.state.images.length) {
-      if (this.DEBUG) {
-        console.log("this.state.images:", this.state.images);
-      }
-      if (this.DEBUG) {
-        console.log(
-          "this.state.images:",
-          this.state.images[this.state.currentImageIndex]
-        );
-      }
-      if (this.DEBUG) {
-        console.log(
-          "this.state.currentImageIndex :",
-          this.state.currentImageIndex
-        );
-      }
-      if (this.DEBUG) {
-        console.log(
-          "this.state.images[this.state.currentImageIndex].fileName:",
-          this.state.images[this.state.currentImageIndex].fileName
-        );
-      }
+      // if (this.DEBUG) {
+      //   console.log("this.state.images:", this.state.images);
+      // }
+      // if (this.DEBUG) {
+      //   console.log(
+      //     "this.state.images:",
+      //     this.state.images[this.state.currentImageIndex]
+      //   );
+      // }
+      // if (this.DEBUG) {
+      //   console.log(
+      //     "this.state.currentImageIndex :",
+      //     this.state.currentImageIndex
+      //   );
+      // }
+      // if (this.DEBUG) {
+      //   console.log(
+      //     "this.state.images[this.state.currentImageIndex].fileName:",
+      //     this.state.images[this.state.currentImageIndex].fileName
+      //   );
+      // }
+
+      this.debug('debugger is running');
 
       let image0 = this.state.images[0].fileName.trim();
       let image1 = this.state.images[1].fileName.trim();

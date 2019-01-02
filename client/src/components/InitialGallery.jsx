@@ -8,18 +8,12 @@ const InitialLoad = function(props) {
       <GalleryHalf image={'images/Loading_icon.gif'} />
       <div className="col-6">
         <div className="row">
-          <GalleryQuarter
-            image={'images/Loading_icon.gif'}
-          />
+          <GalleryQuarter image={'images/Loading_icon.gif'} />
           <GalleryQuarter image={'images/Loading_icon.gif'} />
         </div>
         <div className="row">
-          <GalleryQuarter
-            image={'images/Loading_icon.gif'}
-          />
-          <GalleryQuarter
-            image={'images/Loading_icon.gif'}
-          />
+          <GalleryQuarter image={'images/Loading_icon.gif'} />
+          <GalleryQuarter image={'images/Loading_icon.gif'} />
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ const getGalleryImages = function(req, res) {
         where: {
           primaryImage: false
         },
-        limit: 10
+        limit: 6
       })
         .then(function(data2) {
           res.json(data.concat(data2));
