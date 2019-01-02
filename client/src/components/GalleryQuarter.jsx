@@ -5,7 +5,7 @@ import ViewPhotosBtn from './ViewPhotosBtn.jsx';
 const GalleryQuarter = function(props) {
   let position = props.position;
 
-  if (position == '2') { 
+  if (position === 2) { 
     return (
       <div className={'col-6 quarter' + ' pos' + props.position}>
         <ShareSaveBtns 
@@ -14,7 +14,7 @@ const GalleryQuarter = function(props) {
         <img className={props.highLight ? 'img-fluid img-gallery-qtr' : 'img-fluid img-gallery-qtr overlay-img'} data-position={props.position} onMouseOver={props.hoverOn} onMouseOut={props.hoverOff} src={props.image} onClick={props.handleImageClickShowCarousel} />
       </div>
     );
-  } else if (position == '4') {
+  } else if (position === 4) {
     return ( 
       <div className={'col-6 quarter' + ' pos' + props.position}>
         <ViewPhotosBtn 
