@@ -2,7 +2,7 @@ import React from 'react';
 import GalleryHalf from './GalleryHalf.jsx';
 import GalleryQuarter from './GalleryQuarter.jsx';
 import Carousel from '../components/Carousel.jsx';
-import highLightCurrentSelection from './Utility.jsx';
+import { highLightCurrentSelection } from './Utility.jsx';
 import InitialGallery from './InitialGallery.jsx';
 import Share from './Share.jsx';
 
@@ -100,8 +100,8 @@ class Gallery extends React.Component {
   }
 
   handleImageClickShowCarousel(e) {
-    console.log("handleImageClickShowCarousel clicked: ", e.target);
-    console.log("e.target.dataset.position: ", e.target.dataset.position);
+    // console.log('handleImageClickShowCarousel clicked: ', e.target);
+    // console.log('e.target.dataset.position: ', e.target.dataset.position);
     const currentImageIndex = +e.target.dataset.position;
     let hl = [];
     const len = this.state.numOfImages;
@@ -182,59 +182,9 @@ class Gallery extends React.Component {
   handleCloseShare(e) {
     this.setState({ showShare: false });
   }
-
-  debug(msg) {
-    console.log(msg);
-
-    if (this.DEBUG) {
-      console.log('this.state.images:', this.state.images);
-    }
-    if (this.DEBUG) {
-      console.log(
-        'this.state.images:',
-        this.state.images[this.state.currentImageIndex]
-      );
-    }
-    if (this.DEBUG) {
-      console.log(
-        'this.state.currentImageIndex :',
-        this.state.currentImageIndex
-      );
-    }
-    if (this.DEBUG) {
-      console.log(
-        'this.state.images[this.state.currentImageIndex].fileName:',
-        this.state.images[this.state.currentImageIndex].fileName
-      );
-    }
-
-  } // debug
-
+  
   render() {
     if (this.state.images.length) {
-      // if (this.DEBUG) {
-      //   console.log("this.state.images:", this.state.images);
-      // }
-      // if (this.DEBUG) {
-      //   console.log(
-      //     "this.state.images:",
-      //     this.state.images[this.state.currentImageIndex]
-      //   );
-      // }
-      // if (this.DEBUG) {
-      //   console.log(
-      //     "this.state.currentImageIndex :",
-      //     this.state.currentImageIndex
-      //   );
-      // }
-      // if (this.DEBUG) {
-      //   console.log(
-      //     "this.state.images[this.state.currentImageIndex].fileName:",
-      //     this.state.images[this.state.currentImageIndex].fileName
-      //   );
-      // }
-
-      this.debug('debugger is running');
 
       let image0 = this.state.images[0].fileName.trim();
       let image1 = this.state.images[1].fileName.trim();

@@ -1,4 +1,4 @@
-const highLightCurrentSelection = function(targetToHighLight, len) {
+export const highLightCurrentSelection = function(targetToHighLight, len) {
   const hl = [];
   targetToHighLight = typeof targetToHighLight === 'number' ? targetToHighLight : -1;
 
@@ -11,4 +11,3 @@ const highLightCurrentSelection = function(targetToHighLight, len) {
   return hl;
 };
 
-export default highLightCurrentSelection;
