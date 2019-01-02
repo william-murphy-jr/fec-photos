@@ -3,7 +3,8 @@ import React from 'react';
 const ShareSaveBtns = function(props) {
   return (
     <div className='share-save'>
-      <button className="galleryQtrBtn">
+      <button className="galleryQtrBtn"
+        onClick={props.handleClickedShare}>
         <i className='far fa-share-square share'></i>
         <span className="galleryQtrBtnTxt">
           <span className='innerGalleryQtrBtnTxt'>Share</span>

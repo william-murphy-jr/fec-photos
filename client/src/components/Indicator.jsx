@@ -2,7 +2,7 @@ import React from 'react';
 import Squarepip from './Squarepip.jsx';
 
 const Indicator = function(props) {
-  console.log("props.showPhotoList: ", props.showPhotoList);
+  // console.log("props.showPhotoList: ", props.showPhotoList);
   return <div className="indicator">
     <div className={props.showPhotoList ? 'wrapper_1 slide-up' : 'wrapper_1 slide-down'}>
       <div className="wrapper_2_left">

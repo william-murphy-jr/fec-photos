@@ -14,6 +14,7 @@ class Gallery extends React.Component {
       numOfImages: 0,
       showCarousel: false,
       showPhotoList: true,
+      showShare: false,
       currentImageIndex: 0,
       moveViewPhotosBtn: false
     };
@@ -32,6 +33,7 @@ class Gallery extends React.Component {
     this.handleClickedSquare = this.handleClickedSquare.bind(this);
     this.handleShowPhotoList = this.handleShowPhotoList.bind(this);
     this.handleHidePhotoList = this.handleHidePhotoList.bind(this);
+    this.handleClickedShare = this.handleClickedShare.bind(this);
   }
 
   componentDidMount() {
@@ -163,6 +165,11 @@ class Gallery extends React.Component {
     console.log('handle hide photo list');
     this.setState({showPhotoList: false});
   }
+
+  handleClickedShare(e) {
+    console.log('Clicked Share Button');
+    this.setState({showShare: true});
+  }
   
   render() {
     if (this.state.images.length) {
@@ -206,6 +213,7 @@ class Gallery extends React.Component {
             handleHidePhotoList={this.handleHidePhotoList}
             showPhotoList={this.state.showPhotoList}
           />
+          <Share />
           <div className="row">
             <GalleryHalf
               image={image0}
@@ -233,6 +241,7 @@ class Gallery extends React.Component {
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[2].value}
+                  handleClickedShare={this.handleClickedShare}
                   handleImageClickShowCarousel={
                     this.handleImageClickShowCarousel
                   }
