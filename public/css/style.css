@@ -32,13 +32,13 @@
 
 .img-fluid:hover {
   z-index: 2;
-  -webkit-transition: all 400ms ease-in;
+  -webkit-transition: all 400ms ease-in-out;
   -webkit-transform: scale(1.1);
-  -ms-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in-out;
   -ms-transform: scale(1.1);
-  -moz-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in-out;
   -moz-transform: scale(1.1);
-  transition: all 400ms ease-in;
+  transition: all 400ms ease-in-out;
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -173,10 +173,10 @@
 }
 
 .showPhotoList {
-  -webkit-transition: all 400ms ease-in;
-  -ms-transition: all 400ms ease-in;
-  -moz-transition: all 400ms ease-in;
-  transition: all 400ms ease-in;
+  -webkit-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
   display: inline-block;
   color: white;
   width: 8em;
@@ -224,4 +224,22 @@
 .save {
   padding-left: 4px;
   padding-right: 8px;
+}
+.view-photos-btn {
+  position: absolute;
+  -webkit-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1;
+}
+
+.move-view-photos-btn {
+  -webkit-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  bottom: 28px;
 }

@@ -14,7 +14,8 @@ class Gallery extends React.Component {
       numOfImages: 0,
       showCarousel: false,
       showPhotoList: true,
-      currentImageIndex: 0
+      currentImageIndex: 0,
+      moveViewPhotosBtn: false
     };
 
     // Turn on & off console.log
@@ -56,19 +57,24 @@ class Gallery extends React.Component {
   }
 
   hoverOn(e) {
+    console.log('hoverOn');
     let targetPos = +e.target.dataset.position;
     const hl = [];
     const len = this.state.numOfImages;
-
+    
     for (let i = 0; i < len; i++) {
       if (targetPos === i) {
         hl.push({ value: true });
       }
       hl.push({value: false});
-      this.setState({ highLight: hl });
+      this.setState({
+        highLight: hl,
+        moveViewPhotosBtn: true
+      });
     }
   }
   hoverOff(e) {
+    console.log('hoverOff');
     let hl = [];
     const len = this.state.numOfImages;
 
@@ -76,7 +82,10 @@ class Gallery extends React.Component {
       hl.push({value: true});
     }
     if (!this.state.showCarousel) {
-      this.setState({highLight: hl});
+      this.setState({
+        highLight: hl,
+        moveViewPhotosBtn: false
+      });
     }
   }
 
@@ -92,7 +101,8 @@ class Gallery extends React.Component {
     this.setState({
       currentImageIndex: currentImageIndex,
       highLight: hl,
-      showCarousel: true
+      showCarousel: true,
+      moveViewPhotosBtn: false
     });
   }
 
@@ -181,6 +191,8 @@ class Gallery extends React.Component {
       let image3 = this.state.images[3].fileName.trim();
       let image4 = this.state.images[4].fileName.trim();
 
+      console.log('moveViewPhotosBtn: ', this.state.moveViewPhotosBtn);
+
       return (
         <div className="container-fluid">
           <Carousel
@@ -249,6 +261,7 @@ class Gallery extends React.Component {
                   handleImageClickShowCarousel={
                     this.handleImageClickShowCarousel
                   }
+                  moveViewPhotosBtn={this.state.moveViewPhotosBtn}
                 />
               </div>
             </div>
