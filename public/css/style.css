@@ -30,6 +30,13 @@
   min-height: 100%;
 }
 
+.img-fluid {
+  -webkit-transition: all 400ms ease-in-out;
+  -ms-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
 .img-fluid:hover {
   z-index: 2;
   -webkit-transition: all 400ms ease-in-out;
