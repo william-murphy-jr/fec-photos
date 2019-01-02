@@ -8,7 +8,7 @@ const Indicator = function(props) {
       <div className="wrapper_2_left">
         <span>{props.currentImageIndex + 1}</span><span>/</span><span>{props.numOfImages}: </span>
         <span>Great San Francisco Location</span><br />
-        <span style={{opacity:'0.5'}}><em>Verified Photo</em></span><span></span>
+        <span style={{opacity: '0.5'}}><em>Verified Photo</em></span><span></span>
       </div>
 
       <div className="wrapper_2">

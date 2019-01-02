@@ -8,7 +8,7 @@ const GalleryQuarter = function(props) {
   // console.log('props.position: ANY *** ', props.position); 
 
   if (position == '2') { 
-    console.log('props.position: ', props.position); 
+    // console.log('props.position: ', props.position); 
     return (
       <div className={'col-6 quarter' + ' pos' + props.position}>
         <ShareSaveBtns 

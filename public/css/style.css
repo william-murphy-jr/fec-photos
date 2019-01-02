@@ -236,7 +236,7 @@
   cursor: pointer;
 }
 
-.share {
+.share-square {
   padding-left: 4px;
   padding-right: 8px;
 }
@@ -283,4 +283,67 @@
   -moz-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   top:48px;
+}
+
+.share {
+  position: fixed;
+   /* display: none; */
+   /* Hidden by default */
+  width: 33%;
+  height: 90%;
+  top: 5%;
+  left: 33%;
+   /* right: 0;
+   bottom: 0; */
+   /* background-color: #484848; */
+   background-color: white;
+   /* charcoal background with opacity */
+   z-index: 2;
+   /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.hide-share {
+  display: none;
+}
+
+.show-share {
+  display: block;
+}
+
+.share-list-style {
+  list-style-type: none;
+  margin-right: 40px;
+}
+
+.share-close {
+  font-size: 3em;
+  cursor: pointer;
+}
+
+.share-close span {
+  border-radius: 31px;
+  padding: 0 8px 0 8px;
+  border: 1px solid rgba(0,0,255,0.2);
+}
+
+.share-decription {
+  padding-bottom: 1em;
+  border-bottom: 1px solid lightgray;
+}
+
+.share-item {
+  min-height: 5em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  color: #008489;
+  font-weight: bold;
+  border-bottom: 1px solid lightgray;
+}
+
+.share-item:last-of-type {
+  border-bottom: none;
+}
+
+.share-item i {
+  padding-right: 8px;
 }

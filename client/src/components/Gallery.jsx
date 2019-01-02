@@ -4,6 +4,7 @@ import GalleryQuarter from './GalleryQuarter.jsx';
 import Carousel from '../components/Carousel.jsx';
 import highLightCurrentSelection from './Utility.jsx';
 import InitialGallery from './InitialGallery.jsx';
+import Share from './Share.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -25,8 +26,12 @@ class Gallery extends React.Component {
 
     this.hoverOn = this.hoverOn.bind(this);
     this.hoverOff = this.hoverOff.bind(this);
-    this.handleImageClickShowCarousel = this.handleImageClickShowCarousel.bind(this);
-    this.handleImageClickHideCarousel = this.handleImageClickHideCarousel.bind(this);
+    this.handleImageClickShowCarousel = this.handleImageClickShowCarousel.bind(
+      this
+    );
+    this.handleImageClickHideCarousel = this.handleImageClickHideCarousel.bind(
+      this
+    );
     this.nextSlide = this.nextSlide.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.previousSlide = this.previousSlide.bind(this);
@@ -34,26 +39,31 @@ class Gallery extends React.Component {
     this.handleShowPhotoList = this.handleShowPhotoList.bind(this);
     this.handleHidePhotoList = this.handleHidePhotoList.bind(this);
     this.handleClickedShare = this.handleClickedShare.bind(this);
+    this.handleCloseShare = this.handleCloseShare.bind(this);
   }
 
   componentDidMount() {
     $.ajax({
-      method: 'GET',
-      url: 'http://localhost:9999/gallery'
+      method: "GET",
+      url: "http://localhost:9999/gallery"
     }).done(
       function(data) {
-        if (this.DEBUG_2) { console.log(data); }
-        if (this.DEBUG_2) { console.log('data[0].fileName: ', data[0].fileName); }
+        if (this.DEBUG_2) {
+          console.log(data);
+        }
+        if (this.DEBUG_2) {
+          console.log("data[0].fileName: ", data[0].fileName);
+        }
         const len = data.length;
         const hl = [];
 
-        this.setState({numOfImages: len});
+        this.setState({ numOfImages: len });
 
         for (let i = 0; i < len; i++) {
-          hl.push({value: true});
+          hl.push({ value: true });
         }
 
-        this.setState({ highLight: hl, images: data});
+        this.setState({ highLight: hl, images: data });
       }.bind(this)
     );
   }
@@ -62,12 +72,12 @@ class Gallery extends React.Component {
     let targetPos = +e.target.dataset.position;
     const hl = [];
     const len = this.state.numOfImages;
-    
+
     for (let i = 0; i < len; i++) {
       if (targetPos === i) {
         hl.push({ value: true });
       }
-      hl.push({value: false});
+      hl.push({ value: false });
       this.setState({
         highLight: hl,
         moveViewPhotosBtn: true
@@ -79,7 +89,7 @@ class Gallery extends React.Component {
     const len = this.state.numOfImages;
 
     for (let i = 0; i < len; i++) {
-      hl.push({value: true});
+      hl.push({ value: true });
     }
     if (!this.state.showCarousel) {
       this.setState({
@@ -90,8 +100,8 @@ class Gallery extends React.Component {
   }
 
   handleImageClickShowCarousel(e) {
-    console.log('handleImageClickShowCarousel clicked: ', e.target);
-    console.log('e.target.dataset.position: ', e.target.dataset.position);
+    console.log("handleImageClickShowCarousel clicked: ", e.target);
+    console.log("e.target.dataset.position: ", e.target.dataset.position);
     const currentImageIndex = +e.target.dataset.position;
     let hl = [];
     const len = this.state.numOfImages;
@@ -143,13 +153,13 @@ class Gallery extends React.Component {
   }
 
   handleClickedSquare(e) {
-    console.log('e.target.dataset.position: ', e.target.dataset.position);
+    console.log("e.target.dataset.position: ", e.target.dataset.position);
     const clickedImageIndex = +e.target.dataset.position;
     const len = this.state.numOfImages;
     let hl = [];
 
     hl = highLightCurrentSelection(clickedImageIndex, len);
-    
+
     this.setState({
       currentImageIndex: clickedImageIndex,
       highLight: hl
@@ -157,37 +167,47 @@ class Gallery extends React.Component {
   }
 
   handleShowPhotoList(e) {
-    console.log('handle show photo list');
-    this.setState({showPhotoList: true});
+    console.log("handle show photo list");
+    this.setState({ showPhotoList: true });
   }
 
   handleHidePhotoList(e) {
-    console.log('handle hide photo list');
-    this.setState({showPhotoList: false});
+    console.log("handle hide photo list");
+    this.setState({ showPhotoList: false });
   }
 
   handleClickedShare(e) {
-    console.log('Clicked Share Button');
-    this.setState({showShare: true});
+    console.log("Clicked Share Button");
+    this.setState({ showShare: true });
   }
-  
+
+  handleCloseShare(e) {
+    console.log("Clicked Share Button");
+    this.setState({ showShare: false });
+  }
+
   render() {
     if (this.state.images.length) {
-      if (this.DEBUG) { 
-        console.log('this.state.images:', this.state.images);
-      }
       if (this.DEBUG) {
-        console.log('this.state.images:',
-          this.state.images[this.state.currentImageIndex]);
-      }
-      if (this.DEBUG) {
-        console.log('this.state.currentImageIndex :',
-          this.state.currentImageIndex);
+        console.log("this.state.images:", this.state.images);
       }
       if (this.DEBUG) {
         console.log(
-          'this.state.images[this.state.currentImageIndex].fileName:',
-          this.state.images[this.state.currentImageIndex].fileName);
+          "this.state.images:",
+          this.state.images[this.state.currentImageIndex]
+        );
+      }
+      if (this.DEBUG) {
+        console.log(
+          "this.state.currentImageIndex :",
+          this.state.currentImageIndex
+        );
+      }
+      if (this.DEBUG) {
+        console.log(
+          "this.state.images[this.state.currentImageIndex].fileName:",
+          this.state.images[this.state.currentImageIndex].fileName
+        );
       }
 
       let image0 = this.state.images[0].fileName.trim();
@@ -213,7 +233,10 @@ class Gallery extends React.Component {
             handleHidePhotoList={this.handleHidePhotoList}
             showPhotoList={this.state.showPhotoList}
           />
-          <Share />
+          <Share
+            showShare={this.state.showShare}
+            handleCloseShare={this.handleCloseShare}
+          />
           <div className="row">
             <GalleryHalf
               image={image0}

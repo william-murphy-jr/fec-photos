@@ -5,7 +5,7 @@ const ShareSaveBtns = function(props) {
     <div className='share-save'>
       <button className="galleryQtrBtn"
         onClick={props.handleClickedShare}>
-        <i className='far fa-share-square share'></i>
+        <i className='far fa-share-square share-square'></i>
         <span className="galleryQtrBtnTxt">
           <span className='innerGalleryQtrBtnTxt'>Share</span>
         </span>
