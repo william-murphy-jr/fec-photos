@@ -112,7 +112,8 @@ class Gallery extends React.Component {
       currentImageIndex: currentImageIndex,
       highLight: hl,
       showCarousel: true,
-      moveViewPhotosBtn: false
+      moveViewPhotosBtn: false,
+      showShare: false
     });
   }
 
