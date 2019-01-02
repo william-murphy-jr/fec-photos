@@ -1,8 +1,4 @@
-/* Next rule will outline ***ALL*** elements */
-/* * {
-  outline: 1px solid darkgrey;
-} */
-
+/* Front Page Gallery */
 .quarter {
   padding: 0 !important;
 }
@@ -54,7 +50,6 @@
 /* Carousel */
 .carousel {
   position: fixed; 
-  /* display: none; */ /* Hidden by default */
   width: 100%;  
   height: 100%; 
   top: 0;
@@ -62,7 +57,7 @@
   right: 0;
   bottom: 0;
   background-color: #484848; /* charcoal background with opacity */
-  z-index: 2;   /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 2;   /* Specify a stack order in case there are several elements */
 }
 
 .hide-carousel {
@@ -73,20 +68,6 @@
   display: flex;
   align-items: center;
 }
-
-/* .image-slide {
-  position: 'fixed';
-  height: '70%';
-  width: '50%';
-  top: '12.5%';
-  left: '25%';
-  right: '0';
-  bottom: '0'; */
-  /* backgroundImage: url(${props.url})`; */
-  /* background-size: cover;
-  background-position: center;
-} */
-
 
 .close {
   position: absolute;
@@ -143,6 +124,7 @@
   display: inline-block;
   margin: 0 8px;
 }
+
 .wrapper {
   width: 100%;
   height: 50px;
@@ -157,7 +139,7 @@
 }
 
 .wrapper_2_left {
-  display: inline-block;
+  /* display: inline-block; */
   position: relative;
   top: -4px;
   float: left;
@@ -174,11 +156,8 @@
 }
 
 .pipImage {
-  /* top: 0; */
-  /* left: 0; */
   width: 100%;
   height: 100%;
-  /* vertical-align: bottom; */
   position: absolute;    
 }
 
@@ -285,21 +264,37 @@
   top:48px;
 }
 
+/* Overlay's here */
+.share-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  bottom: 0;
+  background-color: rgba(72,72,72, 0.85);
+  z-index: 1;
+}
+
+.show-share-overlay {
+  display: block;
+}
+
+.hide-share-overlay {
+  display: none;
+}
+
+
 .share {
   position: fixed;
-   /* display: none; */
-   /* Hidden by default */
   width: 33%;
   height: 90%;
   top: 5%;
   left: 33%;
-   /* right: 0;
-   bottom: 0; */
-   /* background-color: #484848; */
-   background-color: white;
-   /* charcoal background with opacity */
-   z-index: 2;
-   /* Specify a stack order in case you're using a different order for other elements */
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 2;
 }
 
 .hide-share {
@@ -346,4 +341,8 @@
 
 .share-item i {
   padding-right: 8px;
+}
+
+.share-item a {
+  color: #008489;
 }

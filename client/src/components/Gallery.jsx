@@ -78,10 +78,10 @@ class Gallery extends React.Component {
         hl.push({ value: true });
       }
       hl.push({ value: false });
-      this.setState({
-        highLight: hl,
-        moveViewPhotosBtn: true
-      });
+      if (targetPos === 4) {
+        this.setState({ moveViewPhotosBtn: true});
+      }
+      this.setState({highLight: hl});
     }
   }
   hoverOff(e) {
