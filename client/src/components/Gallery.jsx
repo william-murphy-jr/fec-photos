@@ -57,7 +57,6 @@ class Gallery extends React.Component {
   }
 
   hoverOn(e) {
-    console.log('hoverOn');
     let targetPos = +e.target.dataset.position;
     const hl = [];
     const len = this.state.numOfImages;
@@ -74,7 +73,6 @@ class Gallery extends React.Component {
     }
   }
   hoverOff(e) {
-    console.log('hoverOff');
     let hl = [];
     const len = this.state.numOfImages;
 
@@ -190,8 +188,6 @@ class Gallery extends React.Component {
       let image2 = this.state.images[2].fileName.trim();
       let image3 = this.state.images[3].fileName.trim();
       let image4 = this.state.images[4].fileName.trim();
-
-      console.log('moveViewPhotosBtn: ', this.state.moveViewPhotosBtn);
 
       return (
         <div className="container-fluid">
