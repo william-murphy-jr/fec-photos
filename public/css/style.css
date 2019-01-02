@@ -40,13 +40,13 @@
 .img-fluid:hover {
   z-index: 2;
   -webkit-transition: all 400ms ease-in-out;
-  -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.05);
   -ms-transition: all 400ms ease-in-out;
-  -ms-transform: scale(1.1);
+  -ms-transform: scale(1.05);
   -moz-transition: all 400ms ease-in-out;
-  -moz-transform: scale(1.1);
+  -moz-transform: scale(1.05);
   transition: all 400ms ease-in-out;
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
 }
 
