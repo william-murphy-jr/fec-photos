@@ -29,9 +29,6 @@ const Share = function(props) {
           <li className='share-item'>
             <i className='fas fa-copy'></i>
             <a href="#" target="_blank">Copy Link</a></li>
-          <li className='share-item'>
-            <i className='fas fa-code'></i>
-            <a href="#" target="_blank">Embed</a></li>
         </ul>
       </div>
     </div>
