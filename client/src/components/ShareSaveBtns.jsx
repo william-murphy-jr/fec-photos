@@ -10,7 +10,8 @@ const ShareSaveBtns = function(props) {
           <span className='innerGalleryQtrBtnTxt'>Share</span>
         </span>
       </button>
-      <button className="galleryQtrBtn">
+      <button className="galleryQtrBtn"
+        onClick={props.handleClickedSave}>
         <i className="far fa-heart save"></i>
         <span className="galleryQtrBtnTxt">Save</span>
       </button>

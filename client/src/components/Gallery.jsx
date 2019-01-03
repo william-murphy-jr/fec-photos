@@ -5,6 +5,7 @@ import Carousel from '../components/Carousel.jsx';
 import { highLightCurrentSelection } from './Utility.jsx';
 import InitialGallery from './InitialGallery.jsx';
 import Share from './Share.jsx';
+import Save from './Save.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class Gallery extends React.Component {
       showCarousel: false,
       showPhotoList: true,
       showShare: false,
+      showSave: false,
+      handleClickedSave: false,
       currentImageIndex: 0,
       moveViewPhotosBtn: false
     };
@@ -40,6 +43,8 @@ class Gallery extends React.Component {
     this.handleHidePhotoList = this.handleHidePhotoList.bind(this);
     this.handleClickedShare = this.handleClickedShare.bind(this);
     this.handleCloseShare = this.handleCloseShare.bind(this);
+    this.handleClickedSave = this.handleClickedSave.bind(this);
+    this.handleCloseSave = this.handleCloseSave.bind(this);
   }
 
   componentDidMount() {
@@ -113,7 +118,8 @@ class Gallery extends React.Component {
       highLight: hl,
       showCarousel: true,
       moveViewPhotosBtn: false,
-      showShare: false
+      showShare: false,
+      showSave: false
     });
   }
 
@@ -176,12 +182,25 @@ class Gallery extends React.Component {
   }
 
   handleClickedShare(e) {
-    this.setState({ showShare: true });
+    if (!this.state.showSave) {
+      this.setState({ showShare: true });
+    }
   }
 
   handleCloseShare(e) {
     this.setState({ showShare: false });
   }
+
+  handleClickedSave(e) {
+    if (!this.state.showShare) {
+      this.setState({ showSave: true });
+    }
+  }
+
+  handleCloseSave(e) {
+    this.setState({ showSave: false });
+  }
+
   
   render() {
     if (this.state.images.length) {
@@ -213,6 +232,10 @@ class Gallery extends React.Component {
             showShare={this.state.showShare}
             handleCloseShare={this.handleCloseShare}
           />
+          <Save
+            showSave={this.state.showSave}
+            handleCloseSave={this.handleCloseSave}
+          />
           <div className="row">
             <GalleryHalf
               image={image0}
@@ -241,6 +264,7 @@ class Gallery extends React.Component {
                   hoverOff={this.hoverOff}
                   highLight={this.state.highLight[2].value}
                   handleClickedShare={this.handleClickedShare}
+                  handleClickedSave={this.handleClickedSave}
                   handleImageClickShowCarousel={
                     this.handleImageClickShowCarousel
                   }
