@@ -8,7 +8,7 @@ const GalleryQuarter = function(props) {
   if (position === 2) { 
     return (
       <div className={'col-6 quarter' + ' pos' + props.position}>
-        <ShareSaveBtns 
+        <ShareSaveBtns
           handleClickedShare={props.handleClickedShare}
           handleClickedSave={props.handleClickedSave}
         />

@@ -438,6 +438,31 @@ li {
   /* outline: 1px solid gray; */
   /* outline-offset: -1px; */
 }
+
+.save-description-title {
+  font-weight: bold;
+}
+
+.save-description {
+  font-weight: normal;
+  color: gray !important;
+}
+
+.save-stars {
+  color: #008489;
+  font-size: 16px;
+}
+
+.save-reviews {
+  font-weight: bold;
+  color: gray !important;
+}
+
+.save-item-location {
+  margin-top: 20%;
+}
+
+
 /* .share-item-or-text div {
   position: relative;
   text-align: center;

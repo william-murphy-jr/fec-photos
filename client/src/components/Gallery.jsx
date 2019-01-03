@@ -183,7 +183,9 @@ class Gallery extends React.Component {
 
   handleClickedShare(e) {
     if (!this.state.showSave) {
-      this.setState({ showShare: true });
+      this.setState(function() {
+        return { showShare: !this.state.showShare };
+      });
     }
   }
 
@@ -193,7 +195,9 @@ class Gallery extends React.Component {
 
   handleClickedSave(e) {
     if (!this.state.showShare) {
-      this.setState({ showSave: true });
+      this.setState(function() {
+        return { showSave: !this.state.showSave };
+      });
     }
   }
 
@@ -233,6 +237,7 @@ class Gallery extends React.Component {
             handleCloseShare={this.handleCloseShare}
           />
           <Save
+            image0={image0}
             showSave={this.state.showSave}
             handleCloseSave={this.handleCloseSave}
           />
@@ -259,6 +264,7 @@ class Gallery extends React.Component {
                 />
                 <GalleryQuarter
                   image={image2}
+                  image0={image0}
                   position={2}
                   hoverOn={this.hoverOn}
                   hoverOff={this.hoverOff}

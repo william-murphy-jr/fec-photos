@@ -39,9 +39,21 @@ const Save = function(props) {
               </span>
             </button>
           </li>
-          <li className='share-item'>
-            <div>
-
+          <li className='save-item-location'>
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-5">
+                  <img className="image-fluid" src={props.image0} alt="location" style={{maxWidth: '100%'}}/>
+                </div>
+                <div className="col-7">
+                  <p className="save-description-title">Great Castro Location</p>
+                  <p className="save-description">San Fransico, CA, United States</p>
+                  <p>
+                    <span className="save-stars">&#9733;&#9733;&#9733;&#9733;&#9733;&nbsp;</span>
+                    <span className="save-reviews">413 Reviews</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </li>
         </ul>
