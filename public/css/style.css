@@ -33,6 +33,11 @@
   transition: all 400ms ease-in-out;
 }
 
+/* Uncomment for use with modules */
+.img-main {
+  /* margin-bottom: -15px; */
+}
+
 .img-fluid:hover {
   z-index: 2;
   -webkit-transition: all 400ms ease-in-out;
@@ -57,7 +62,7 @@
   right: 0;
   bottom: 0;
   background-color: #484848; /* charcoal background with opacity */
-  z-index: 2;   /* Specify a stack order in case there are several elements */
+  z-index: 999;   /* Specify a stack order in case there are several elements */
 }
 
 .hide-carousel {
