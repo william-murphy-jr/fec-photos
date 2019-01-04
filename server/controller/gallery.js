@@ -5,7 +5,7 @@ const result = [];
 const getGalleryImages = function(req, res) {
   db.DISPLAY_IMAGE.findAll({
     where: { primaryImage: true },
-    limit: 1
+    limit: 10
   })
     .then(function(data) {
       result.concat(data);
@@ -16,7 +16,9 @@ const getGalleryImages = function(req, res) {
         limit: 6
       })
         .then(function(data2) {
-          res.json(data.concat(data2));
+          const front = [];
+          front.push(data[Math.floor(Math.random() * data.length)]);
+          res.json(front.concat(data2));
         });
     });
 };
