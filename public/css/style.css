@@ -1,4 +1,12 @@
 /* Front Page Gallery */
+body {
+  font-family: Circular,
+  "Helvetica Neue",
+  Helvetica,
+  Arial,
+  sans-serif;  
+}
+
 .quarter {
   padding: 0 !important;
 }
@@ -33,7 +41,7 @@
   transition: all 400ms ease-in-out;
 }
 
-/* Uncomment for use with modules */
+/**** Many need to Uncomment & adjust offset for use with modules ****/
 .img-main {
   /* margin-bottom: -15px; */
 }
@@ -166,6 +174,12 @@
   float: right;
   margin-bottom: 8px;
   text-align: right;
+  border: 1px solid transparent;
+
+}
+
+.wrapper_2:hover {
+  border: 1px solid rgba(69, 104, 178);
 }
 
 .pipImage {
