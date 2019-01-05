@@ -217,6 +217,7 @@ class Gallery extends React.Component {
 
       return (
         <div className="container-fluid">
+          <img src='images/best_bnb_nav.png' style={{width: '100%', height: '75px'}}/>
           <Carousel
             showCarousel={this.state.showCarousel}
             hideCarousel={this.state.hideCarousel}
