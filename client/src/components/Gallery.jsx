@@ -307,6 +307,7 @@ class Gallery extends React.Component {
     } else {
       return (
         <div className="container-fluid">
+          <img src='images/best_bnb_nav.png' style={{ width: '100%', height: '75px' }} />
           <InitialGallery />
         </div>
       );
