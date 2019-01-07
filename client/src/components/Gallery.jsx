@@ -216,12 +216,11 @@ class Gallery extends React.Component {
   render() {
     if (this.state.images.length) {
 
-      let image0 = this.state.images[0].fileName.trim();
-      let image1 = this.state.images[1].fileName.trim();
-      let image2 = this.state.images[2].fileName.trim();
-      let image3 = this.state.images[3].fileName.trim();
-      let image4 = this.state.images[4].fileName.trim();
-
+      let image0 = this.state.images[0].fileName;
+      let image1 = this.state.images[1].fileName;
+      let image2 = this.state.images[2].fileName;
+      let image3 = this.state.images[3].fileName;
+      let image4 = this.state.images[4].fileName;
       return (
         <div className="container-fluid">
           <img src='images/best_bnb_nav.png' style={{width: '100%', height: '75px'}}/>
