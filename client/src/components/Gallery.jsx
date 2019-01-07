@@ -48,7 +48,8 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
-    const href = window.location.href;
+    let href = window.location.href;
+    href = str('home/1', '');
     const galleryRoute = href + 'gallery';
 
     if (this.DEBUG_2) {
