@@ -48,9 +48,12 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
+    const href = window.location.href;
+    const galleryRoute = href + 'gallery';
+
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:9999/gallery'
+      url: galleryRoute
     }).done(
       function(data) {
         if (this.DEBUG_2) {
