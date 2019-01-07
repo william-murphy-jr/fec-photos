@@ -223,7 +223,7 @@ class Gallery extends React.Component {
       let image4 = this.state.images[4].fileName;
       return (
         <div className="container-fluid">
-          <img src='images/best_bnb_nav.png' style={{width: '100%', height: '75px'}}/>
+          <img src='https://s3-us-west-1.amazonaws.com/image-store-100/best_bnb_nav.png' style={{width: '100%', height: '75px'}}/>
           <Carousel
             showCarousel={this.state.showCarousel}
             hideCarousel={this.state.hideCarousel}
