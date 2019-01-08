@@ -43,7 +43,7 @@ body {
 
 /**** Many need to Uncomment & adjust offset for use with modules ****/
 .img-main {
-  /* margin-bottom: -15px; */
+  margin-bottom: -15px;
 }
 
 .img-fluid:hover {
