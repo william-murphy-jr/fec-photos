@@ -15,19 +15,19 @@ const Share = function(props) {
             location - Apartments for Rent in San Francisco
           </li>
           <li className='share-item'>
-            <i className="fab fa-facebook-f"></i>
+            <i className="fa fa-facebook-f"></i>
             <a href="https://www.facebook.com" target="_blank">Facebook</a></li>
           <li className='share-item'>
-            <i className='fab fa-twitter'></i>
+            <i className='fa fa-twitter'></i>
             <a href="https://www.twitter.com" target="_blank">Twitter</a></li>
           <li className='share-item'>
-            <i className="fas fa-envelope"></i>
+            <i className="fa fa-envelope"></i>
             <a href="mailto:" target="_blank">Email</a></li>
           <li className='share-item'>
-            <i className="fab fa-facebook-messenger"></i>
+            <i className="fa fa-bolt"></i>
             <a href="https://www.messenger.com" target="_blank">Messenger</a></li>
           <li className='share-item'>
-            <i className='fas fa-copy'></i>
+            <i className='fa fa-copy'></i>
             <a href="#" target="_blank">Copy Link</a></li>
         </ul>
       </div>

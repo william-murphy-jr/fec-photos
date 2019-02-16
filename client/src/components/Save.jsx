@@ -14,13 +14,13 @@ const Save = function(props) {
           </li>
           <li className='save-item-facebook'>
             <button>
-              <i className="fab fa-facebook-f"></i>
+              <i className="fa fa-facebook-f"></i>
               <a href="https://www.facebook.com" target="_blank">Continue with Facebook</a>
             </button>
           </li>
           <li className='save-item-google'>
             <button>
-              <i className='fab fa-google'></i>
+              <i className='fa fa-google'></i>
               <a href="https://www.google.com" target="_blank">Continue with Google</a>
             </button>          
           </li>
@@ -29,7 +29,7 @@ const Save = function(props) {
           </li>
           <li className='save-item-email'>
             <button>
-              <i className="fas fa-envelope"></i>
+              <i className="fa fa-envelope"></i>
               <a href="mailto:" target="_blank">Sign up with Email</a>
             </button>
           </li>

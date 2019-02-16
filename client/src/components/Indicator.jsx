@@ -15,11 +15,11 @@ const Indicator = function(props) {
         <div className="wrapper_2">
           <span
             className={props.showPhotoList ? 'showPhotoList' : 'hidePhotoList'}
-            onClick={props.handleHidePhotoList}><span className='hide-show-text'>Hide Photo List</span><i className="fas fa-caret-down"></i></span>
+            onClick={props.handleHidePhotoList}><span className='hide-show-text'>Hide Photo List</span><i className="fa fa-caret-down"></i></span>
           <span
             className={props.showPhotoList ? 'hidePhotoList' : 'showPhotoList'}
             onClick={props.handleShowPhotoList}><span className='hide-show-text'>Show Photo List</span>
-            <i className="fas fa-caret-up"></i></span>
+            <i className="fa fa-caret-up"></i></span>
         </div>
       </div>
 
