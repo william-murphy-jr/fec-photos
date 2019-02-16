@@ -1,11 +1,14 @@
+require('dotenv').config();
+
 const express = require('express');
 const morgan = require('morgan');
-// const db = require('./database/db');
+
 const getGalleryImages = require('../server/controller/gallery');
 
 const app = express();
+const port = process.env.PORT || 9999;
 
-app.set('PORT', 9999);
+app.set('PORT', port);
 app.use(morgan('dev'));
 
 // Used for CORS

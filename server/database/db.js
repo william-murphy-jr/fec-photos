@@ -1,8 +1,12 @@
 const Sequelize = require('sequelize');
 // const seedDb = require('../database/seedDb');  // moved
 
-const sequelize = new Sequelize('gallery', 'student', 'student', {
-  // host: 'localhost',
+const mySqlURL = process.env.MYSQL_DB_URL || 'localhost';
+const mySqlUsrName = process.env.MYSQL_USER_NAME || 'student';
+const mySqlPWD = process.env.MYSQL_PWD || 'student';
+
+const sequelize = new Sequelize('gallery', mySqlUsrName, mySqlPWD, {
+  host: mySqlURL,
   dialect: 'mysql',
   operatorsAliases: false,
 
